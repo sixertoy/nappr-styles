@@ -10,6 +10,11 @@
   "engines": {
     "node": "^10.6.0"
   },
+  "files":[
+    "lib/",
+    "styles.css",
+    "styles.scss"
+  ],
   "devDependencies": {
     "node-sass": "4.10.0",
     "prettier": "1.14.3",
@@ -20,7 +25,6 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "build": "node-sass --recursive --output-style=compressed ./styles.scss ./styles.css",
-    "prepare": "yarn run build"
+    "build": "node-sass --recursive --output-style=compressed ./styles.scss ./styles.css"
   }
 }
