@@ -1,0 +1,30 @@
+{
+  "name": "smarter-scss",
+  "version": "0.1.0",
+  "description": "A collection of SCSS helpers",
+  "main": "./index.scss",
+  "repository": "https://github.com/sixertoy/smarter-scss",
+  "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "engines": {
+    "node": ">=9.10.0"
+  },
+  "devDependencies": {
+    "prettier": "1.14.3",
+    "prettier-stylelint": "0.4.2",
+    "stylelint": "9.7.1",
+    "stylelint-config-standard": "18.2.0",
+    "stylelint-order": "0.8.1",
+    "stylelint-scss": "3.3.2"
+  },
+  "dependencies": {
+    "node-sass": "^4.10.0"
+  },
+  "peerDependencies": {
+    "node-sass-tilde-importer": "ssh://git@github.com:sixertoy/node-sass-tilde-importer"
+  },
+  "scripts": {
+    "sass:build": "./.scripts/build.sh"
+  }
+}

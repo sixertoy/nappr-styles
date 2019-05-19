@@ -1,0 +1,62 @@
+.is-fixed {
+  position: fixed;
+}
+
+.is-relative {
+  position: relative;
+}
+
+.is-absolute {
+  position: absolute;
+}
+
+.is-overlay {
+  @extend .is-absolute;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.is-fixed-overlay {
+  @extend .is-fixed;
+
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.is-flex {
+  display: flex;
+}
+
+.is-block {
+  display: block;
+}
+
+.is-inline {
+  display: inline;
+}
+
+.is-inline-block {
+  display: inline-block;
+}
+
+.is-full-width {
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.is-full-height {
+  height: 100%;
+  min-height: 100%;
+  max-height: 100%;
+}
+
+.is-full-layout {
+  @extend .is-full-width;
+  @extend .is-full-height;
+}

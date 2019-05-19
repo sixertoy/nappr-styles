@@ -1,0 +1,68 @@
+.is-italic {
+  font-style: italic;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-capitalized {
+  text-transform: capitalize;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.is-light {
+  font-weight: 300;
+}
+
+.is-regular {
+  font-weight: 400;
+}
+
+.is-semi-bold {
+  font-weight: 600;
+}
+
+.is-bold {
+  font-weight: 700;
+}
+
+.is-extra-bold {
+  font-weight: 900;
+}
+
+.is-white-text {
+  color: $white;
+}
+
+.is-black-text {
+  color: $black;
+}

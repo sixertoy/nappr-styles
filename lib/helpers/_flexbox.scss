@@ -1,0 +1,75 @@
+$flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
+
+@each $space in $flexSpaceSizes {
+  .flex-#{$space} {
+    flex: #{$space};
+  }
+}
+
+.flex-columns {
+  @extend .flex-1;
+  @extend .is-flex;
+
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-rows {
+  @extend .flex-1;
+  @extend .is-flex;
+
+  flex-direction: column;
+}
+
+.flex-justify {
+  flex-grow: 1;
+  flex-basis: 0;
+  flex-shrink: 1;
+}
+
+.flex-end {
+  justify-content: flex-end;
+}
+
+.flex-start {
+  justify-content: start;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.flex-between {
+  justify-content: space-between;
+}
+
+.flex-around {
+  justify-content: space-around;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-inverse {
+  flex-wrap: wrap-reverse;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.items-start {
+  align-items: flex-start;
+}
+
+.items-end {
+  align-items: flex-end;
+}
+
+.flex-wrapper {
+  @extend .flex-columns;
+  @extend .flex-between;
+
+  flex-wrap: wrap;
+}

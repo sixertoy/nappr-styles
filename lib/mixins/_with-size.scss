@@ -1,0 +1,20 @@
+@mixin withHeight($size) {
+  height: rem($size);
+  min-height: rem($size);
+  max-height: rem($size);
+}
+
+@mixin withWidth($size) {
+  width: rem($size);
+  min-width: rem($size);
+  max-width: rem($size);
+}
+
+@mixin withSize($width, $height) {
+  @include width($width);
+  @include height($height);
+}
+
+@mixin squareSize($size) {
+  @include withSize($size, $size);
+}

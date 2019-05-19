@@ -1,0 +1,35 @@
+table {
+  @include rem(font-size, 12px);
+
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  overflow: scroll;
+  text-align: left;
+  border-spacing: 0;
+  // table-layout: fixed;
+  border-collapse: collapse;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  @include rem(padding, 12px 15px);
+
+  overflow: hidden;
+  display: table-cell;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+table th:last-child,
+table td:last-child {
+  border-right: 0;
+}
+
+table caption {
+  caption-side: top;
+}

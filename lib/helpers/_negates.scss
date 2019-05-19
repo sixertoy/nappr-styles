@@ -1,0 +1,90 @@
+/* -------------------------------------------------
+
+ NEGATES
+
+------------------------------------------------- */
+.no-flex {
+  flex: none;
+}
+
+.no-float {
+  float: none;
+}
+
+.no-margin {
+  margin: 0;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.no-border {
+  border: 0;
+}
+
+.no-background {
+  background-color: transparent;
+}
+
+.no-outline {
+  outline: none;
+}
+
+.no-pointer {
+  cursor: default;
+}
+
+.no-select {
+  user-select: none;
+}
+
+.no-underline,
+a.no-underline,
+a.no-underline:hover,
+a.no-underline:active,
+a.no-underline:visited {
+  text-decoration: none;
+}
+
+.no-scroll-x {
+  overflow-x: hidden;
+}
+
+.no-scroll-y {
+  overflow-y: hidden;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+/* -------------------------------------------------
+
+ IMPORTANT NEGATES
+
+------------------------------------------------- */
+
+.no-no-float {
+  float: none !important;
+}
+
+.no-no-scroll-x {
+  overflow-x: hidden !important;
+}
+
+.no-no-scroll-y {
+  overflow-y: hidden !important;
+}
+
+.no-no-overflow {
+  overflow: hidden !important;
+}
+
+.no-no-border {
+  border: 0 !important;
+}
+
+.no-no-background {
+  background: none !important;
+}

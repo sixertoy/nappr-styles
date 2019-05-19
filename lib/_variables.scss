@@ -1,0 +1,7 @@
+$body-width: 100% !default;
+$body-font-size: 16px !default;
+$default-padding: 12px !default;
+//
+$rem-baseline: $body-font-size !default;
+$rem-fallback: true !default; // always force callback
+$rem-px-only: false !default;

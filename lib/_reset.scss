@@ -1,0 +1,227 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-overflow-scrolling: touch;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  /* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+  */
+  border: 0;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  color: #000000;
+  line-height: 1;
+  width: $body-width;
+  font-size: $body-font-size;
+  font-family: Helvetica, Arial, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+hr,
+input,
+button,
+textarea,
+[role='reset'],
+[role='submit'],
+[role='button'] {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol,
+li {
+  list-style-type: none;
+}
+
+ol + ol,
+li + li {
+  margin-top: $default-padding;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button,
+[role='reset'],
+[role='submit'],
+[role='button'] {
+  border: 0;
+  font-size: 1rem;
+  cursor: pointer;
+  overflow: hidden;
+  user-select: none;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  background: transparent;
+  text-overflow: ellipsis;
+}
+
+a:not(.is-underline),
+a:link:not(.is-underline),
+a:hover:not(.is-underline),
+a:active:not(.is-underline),
+a:visited:not(.is-underline) {
+  text-decoration: none;
+}
+
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.disabled,
+:disabled,
+// a: hover DOIT venir après: lien et a: visited
+// a: active doit venir après un: hover
+:disabled:link,
+:disabled:visited,
+:disabled:hover,
+:disabled:active {
+  cursor: default;
+  cursor: not-allowed;
+  box-shadow: inherit;
+  text-shadow: inherit;
+  pointer-events: none;
+}
+
+/* ------------------------------------------------------
+
+ CLASSES
+
+------------------------------------------------------ */
+
+// .cover {
+//   background-size: cover;
+//   background-position: center;
+//   background-repeat: no-repeat;
+// }
