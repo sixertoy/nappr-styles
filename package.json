@@ -25,6 +25,7 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
+    "start": "node-sass --watch --recursive --output-style=compressed ./styles.scss ./styles.css",
     "build": "node-sass --recursive --output-style=compressed ./styles.scss ./styles.css"
   }
 }
