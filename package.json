@@ -1,6 +1,6 @@
 {
   "name": "@iziges/napper-scss",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A collection of SCSS helpers",
   "main": "./styles.css",
   "repository": "https://github.com/sixertoy/smarter-scss",
