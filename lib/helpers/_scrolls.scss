@@ -7,3 +7,34 @@
   overflow-x: hidden;
   overflow-y: scroll;
 }
+
+/* ----------------------------------------
+
+ SCROLLBOX
+
+---------------------------------------- */
+
+.is-scrollbox-wrapper {
+  @extend .is-relative;
+}
+
+.is-scrollbox {
+  @extend .scroll-y;
+  @extend .scroll-x;
+  @extend .is-absolute;
+  @extend .is-full-layout;
+}
+
+.is-scrollbox-y {
+  @extend .is-scrollbox;
+  @extend .no-scroll-x;
+
+  height: auto;
+}
+
+.is-scrollbox-x {
+  @extend .is-scrollbox;
+  @extend .no-scroll-y;
+
+  width: auto;
+}

@@ -10,26 +10,26 @@
   position: relative;
 }
 
-.is-absolute {
-  position: absolute;
+.is-top-to-bottom {
+  top: 0;
+  bottom: 0;
+}
+
+.is-left-to-right {
+  left: 0;
+  right: 0;
 }
 
 .is-overlay {
   @extend .is-absolute;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  @extend .is-top-to-bottom;
+  @extend .is-left-to-right;
 }
 
 .is-fixed-overlay {
   @extend .is-fixed;
-
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  @extend .is-top-to-bottom;
+  @extend .is-left-to-right;
 }
 
 .is-flex {

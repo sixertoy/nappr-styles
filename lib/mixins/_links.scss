@@ -1,6 +1,6 @@
 // a: hover DOIT venir après: lien et a: visited
 // a: active doit venir après un: hover
-@mixin link($color) {
+@mixin asLink($color) {
   &,
   &:link,
   &:visited,

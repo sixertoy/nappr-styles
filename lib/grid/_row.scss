@@ -1,17 +1,17 @@
-.row-100,
-.row-80,
-.row-75,
-.row-66,
-.row-50,
-.row-40,
-.row-33,
-.row-25,
-.row-20,
-.row-1of1,
-.row-2of2,
-.row-3of3,
-.row-4of4,
-.row-5of5 {
+.rows .row-100,
+.rows .row-80,
+.rows .row-75,
+.rows .row-66,
+.rows .row-50,
+.rows .row-40,
+.rows .row-33,
+.rows .row-25,
+.rows .row-20,
+.rows .row-1of1,
+.rows .row-2of2,
+.rows .row-3of3,
+.rows .row-4of4,
+.rows .row-5of5 {
   $size: 100%;
 
   @extend .flex-1;
@@ -19,8 +19,8 @@
   @include withHeight($size);
 }
 
-.row-80,
-.row-4of5 {
+.rows .row-80,
+.rows .row-4of5 {
   $size: 78.5%;
 
   @extend .flex-1;
@@ -28,8 +28,8 @@
   @include withHeight($size);
 }
 
-.row-75,
-.row-3of4 {
+.rows .row-75,
+.rows .row-3of4 {
   $size: 73.5%;
 
   @extend .flex-1;
@@ -37,8 +37,8 @@
   @include withHeight($size);
 }
 
-.row-66,
-.row-2of3 {
+.rows .row-66,
+.rows .row-2of3 {
   $size: 65.5%;
 
   @extend .flex-1;
@@ -46,8 +46,8 @@
   @include withHeight($size);
 }
 
-.row-60,
-.row-3of5 {
+.rows .row-60,
+.rows .row-3of5 {
   $size: 59.5%;
 
   @extend .flex-1;
@@ -55,9 +55,9 @@
   @include withHeight($size);
 }
 
-.row-50,
-.row-1of2,
-.row-2of4 {
+.rows .row-50,
+.rows .row-1of2,
+.rows .row-2of4 {
   $size: 47.5%;
 
   @extend .flex-1;
@@ -65,8 +65,8 @@
   @include withHeight($size);
 }
 
-.row-40,
-.row-2of5 {
+.rows .row-40,
+.rows .row-2of5 {
   $size: 38%;
 
   @extend .flex-1;
@@ -74,8 +74,8 @@
   @include withHeight($size);
 }
 
-.row-33,
-.row-1of3 {
+.rows .row-33,
+.rows .row-1of3 {
   $size: 31%;
 
   @extend .flex-1;
@@ -83,8 +83,8 @@
   @include withHeight($size);
 }
 
-.row-25,
-.row-1of4 {
+.rows .row-25,
+.rows .row-1of4 {
   $size: 23%;
 
   @extend .flex-1;
@@ -92,8 +92,8 @@
   @include withHeight($size);
 }
 
-.row-20,
-.row-1of5 {
+.rows .row-20,
+.rows .row-1of5 {
   $size: 18%;
 
   @extend .flex-1;
@@ -101,7 +101,7 @@
   @include withHeight($size);
 }
 
-.row-0 {
+.rows .row-0 {
   $size: 0%;
 
   @extend .flex-1;

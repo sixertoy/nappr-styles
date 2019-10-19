@@ -170,6 +170,11 @@ button {
   cursor: pointer;
 }
 
+pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+}
+
 button,
 [role='reset'],
 [role='submit'],
@@ -194,15 +199,11 @@ a:visited:not(.is-underline) {
   text-decoration: none;
 }
 
-pre {
-  word-wrap: break-word;
-  white-space: pre-wrap;
-}
-
 .disabled,
 :disabled,
-// a: hover DOIT venir après: lien et a: visited
-// a: active doit venir après un: hover
+// @NOTE
+// a:hover DOIT venir après a:link et a:visited
+// a:active DOIT venir après un a:hover
 :disabled:link,
 :disabled:visited,
 :disabled:hover,
@@ -213,15 +214,3 @@ pre {
   text-shadow: inherit;
   pointer-events: none;
 }
-
-/* ------------------------------------------------------
-
- CLASSES
-
------------------------------------------------------- */
-
-// .cover {
-//   background-size: cover;
-//   background-position: center;
-//   background-repeat: no-repeat;
-// }

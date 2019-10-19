@@ -10,11 +10,15 @@
   max-width: rem($size);
 }
 
-@mixin withSize($width, $height) {
+@mixin withSize($width, $height: null) {
   @include width($width);
-  @include height($height);
+  @if ($height) {
+    @include height($height);
+  } @else {
+    @include height($width);
+  }
 }
 
 @mixin squareSize($size) {
-  @include withSize($size, $size);
+  @include withSize($size);
 }
