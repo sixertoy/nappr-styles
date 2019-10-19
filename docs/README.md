@@ -1,7 +1,7 @@
-# Napper SCSS
+# Napper Styles
 
 ```bash
-ssh://git@github.com:sixertoy/napper-scss.git#latest
+ssh://git@github.com:sixertoy/napper-styles.git#latest
 ```
 
 # Variables

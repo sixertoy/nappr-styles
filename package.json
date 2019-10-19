@@ -1,9 +1,9 @@
 {
-  "name": "@iziges/napper-scss",
+  "name": "@iziges/napper-styles",
   "version": "0.2.5",
   "description": "A collection of SCSS helpers",
   "main": "./styles.css",
-  "repository": "https://github.com/sixertoy/smarter-scss",
+  "repository": "https://github.com/sixertoy/napper-styles",
   "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
   "license": "ISC",
   "private": true,
