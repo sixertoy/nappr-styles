@@ -1,22 +1,16 @@
-.is-italic {
-  font-style: italic;
+.is-white-text {
+  color: $white;
 }
 
-.is-underline {
-  text-decoration: underline;
+.is-black-text {
+  color: $black;
 }
 
-.is-lowercase {
-  text-transform: lowercase;
-}
+/* ----------------------------
 
-.is-uppercase {
-  text-transform: uppercase;
-}
+Alignments
 
-.is-capitalize {
-  text-transform: capitalize;
-}
+---------------------------- */
 
 .text-left {
   text-align: left;
@@ -39,10 +33,17 @@
   text-overflow: ellipsis;
 }
 
+/* ----------------------------
+
+Font Weight
+
+---------------------------- */
+
 .is-light {
   font-weight: 300;
 }
 
+.is-normal,
 .is-regular {
   font-weight: 400;
 }
@@ -59,10 +60,28 @@
   font-weight: 900;
 }
 
-.is-white-text {
-  color: $white;
+/* ----------------------------
+
+Font Style
+
+---------------------------- */
+
+.is-italic {
+  font-style: italic;
 }
 
-.is-black-text {
-  color: $black;
+.is-underline {
+  text-decoration: underline;
+}
+
+.is-lowercase {
+  text-transform: lowercase;
+}
+
+.is-uppercase {
+  text-transform: uppercase;
+}
+
+.is-capitalize {
+  text-transform: capitalize;
 }

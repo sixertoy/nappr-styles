@@ -2,12 +2,36 @@
   border-radius: 50%;
 }
 
+.is-absolute {
+  position: absolute;
+}
+
 .is-fixed {
   position: fixed;
 }
 
 .is-relative {
   position: relative;
+}
+
+.is-top-left {
+  top: 0;
+  left: 0;
+}
+
+.is-top-right {
+  top: 0;
+  right: 0;
+}
+
+.is-bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+.is-bottom-left {
+  bottom: 0;
+  left: 0;
 }
 
 .is-top-to-bottom {

@@ -1,18 +1,13 @@
-# Napper SCSS
+# Napper Styles (SASS/CSS)
+
+## Requirements
 
 ```bash
-ssh://git@github.com:sixertoy/napper-scss.git#latest
+npm i docsify-cli -g
 ```
 
-# Variables
+## Install
 
-```sass
-$BorderStyle: solid;
-$BorderSizes: () !default;
-$BorderRadiusSizes: () !default;
-
-$FontSizes: () !default;
-
-$default-padding: 12px !default;
-$MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
+```bash
+ssh://git@github.com:sixertoy/napper-styles.git#latest
 ```

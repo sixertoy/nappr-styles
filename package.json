@@ -12,6 +12,7 @@
   },
   "files": [
     "lib/",
+    "docs/",
     "styles.css",
     "styles.scss"
   ],
@@ -25,7 +26,9 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "start": "node-sass --watch --recursive --output-style=compressed ./styles.scss ./styles.css",
-    "build": "node-sass --recursive --output-style=compressed ./styles.scss ./styles.css"
+    "predocs": "node-sass -r --output-style=compressed ./docs/assets/wrapper.scss ./docs/assets/styles.css",
+    "docs": "docsify serve docs",
+    "dev": "node-sass -w -r --output-style=compressed ./styles.scss ./styles.css",
+    "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css"
   }
 }

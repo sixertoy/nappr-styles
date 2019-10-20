@@ -1,0 +1,44 @@
+.docs-container {
+  width: 100%;
+  max-width: 100%;
+  min-width: 100%;
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.docs-container * {
+  user-select: none;
+}
+
+pre.example,
+div.source pre {
+  border-radius: 4px;
+}
+
+pre.example {
+  @import './../../styles.scss';
+
+  margin: 0 !important;
+  white-space: pre-wrap;
+}
+
+div.source pre {
+  margin: 0 !important;
+  white-space: pre-wrap;
+  background-color: #f9da9b;
+  padding: 1.5rem !important;
+}
+
+div.source pre code {
+  padding: 0 !important;
+  background-color: transparent !important;
+}
+
+div.source pre::after {
+  color: #ffffff;
+}
+
+.pre-is-hidden {
+  display: none;
+}

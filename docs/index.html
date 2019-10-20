@@ -10,16 +10,23 @@
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
     />
     <link rel="stylesheet" href="//unpkg.com/docsify/lib/themes/vue.css" />
+    <link rel="stylesheet" href="./assets/styles.css" />
   </head>
   <body>
     <div data-app id="main">Please wait...</div>
     <script>
       window.$docsify = {
         el: '#main',
+        subMaxLevel: 2,
+        coverpage: true,
+        loadSidebar: true,
         name: '@iziges/napper-styles',
         repo: 'https://github.com/sixertoy/napper-styles',
       };
     </script>
     <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/emoji.min.js"></script>
+    <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
+    <script src="./assets/view-source-plugin.js"></script>
   </body>
 </html>
