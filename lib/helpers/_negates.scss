@@ -122,3 +122,11 @@ a.no-no-underline:visited {
 .no-no-overflow {
   overflow: hidden !important;
 }
+
+.no-wrap {
+  white-space: nowrap;
+}
+
+.no-no-wrap {
+  white-space: nowrap !important;
+}

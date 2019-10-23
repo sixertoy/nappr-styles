@@ -1,0 +1,75 @@
+/* ----------------------------------------
+
+ DOCSIFY VIEW SOURCE PLUGIN
+
+---------------------------------------- */
+
+.__docsify-view-source-container {
+  @import './../../styles.scss';
+
+  .__docsify-view-source-code,
+  .__docsify-view-source-preview {
+    @extend .rd4;
+    @extend .use-hand;
+  }
+
+  .__docsify-view-source-preview {
+    @extend .py24;
+    @extend .px26;
+
+    background-color: #f8f8f8;
+  }
+
+  .__docsify-view-source-code {
+    background-color: #f9da9b;
+
+    pre,
+    code {
+      background-color: transparent;
+    }
+
+    pre::after {
+      color: #ffffff;
+    }
+  }
+
+  .__docsify-view-source-hidden {
+    @extend .is-hidden;
+  }
+}
+
+/* ----------------------------------------
+
+ COLORS
+
+---------------------------------------- */
+
+// .docs-palette {
+//   @extend .is-flex;
+//   @extend .flex-center;
+//   @extend .items-center;
+//
+//   height: 70px;
+//   text-align: center;
+//   border: 1px solid #cccccc;
+// }
+//
+// .docs-bg-blue {
+//   background-color: #5db0d7;
+// }
+
+/* ----------------------------------------
+
+ DOCSIFY THEMING
+
+---------------------------------------- */
+
+// article.markdown-section > h4 {
+//   margin-bottom: 12px;
+//
+//   // couleur des titres des sections
+//   a,
+//   a span {
+//     color: #42B983 !important;
+//   }
+// }

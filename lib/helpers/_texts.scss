@@ -70,10 +70,6 @@ Font Style
   font-style: italic;
 }
 
-.is-underline {
-  text-decoration: underline;
-}
-
 .is-lowercase {
   text-transform: lowercase;
 }
@@ -84,4 +80,12 @@ Font Style
 
 .is-capitalize {
   text-transform: capitalize;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.is-stroked {
+  text-decoration: line-through;
 }

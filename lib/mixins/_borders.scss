@@ -1,6 +1,5 @@
-$BorderStyle: solid;
-$BorderSizes: () !default;
-$BorderRadiusSizes: () !default;
+$BorderStyle: solid !default;
+$BorderSizes: (1, 2, 3) !default;
 
 @each $size in $BorderSizes {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
@@ -45,31 +44,68 @@ $BorderRadiusSizes: () !default;
   }
 }
 
+$BorderRadiusSizes: (2, 3, 4, 5, 6, 7, 8, 10, 12) !default;
+
 @each $size in $BorderRadiusSizes {
+  $sides: (all, topbottom, leftright, top, left, right, bottom);
+
   $pixelValue: number-to-pixel($size);
 
   @each $side in $sides {
     @if $side == 'all' {
-      .r#{$size} {
+      .rd#{$size} {
         @include rem(border-radius, $pixelValue);
       }
     }
-    // rtlN, rtrN, rblN, rbrN
-    //
-    // rrN
-    // border-top-right-radius
-    // border-bottom-right-radius
-    //
-    // rlN
-    // border-top-left-radius
-    // border-bottom-left-radius
-    //
-    // rtN
-    // border-top-left-radius
-    // border-top-right-radius
-    //
-    // .rbN
-    // border-bottom-left-radius
-    // border-bottom-right-radius
+
+    @else if $side == 'topbottom' {
+      .rdy#{$size} {
+        @include rem(border-top-left-radius, $pixelValue);
+        @include rem(border-bottom-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'leftright' {
+      .rdx#{$size} {
+        @include rem(border-top-right-radius, $pixelValue);
+        @include rem(border-bottom-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'top' {
+      .rdt#{$size} {
+        @include rem(border-top-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'right' {
+      .rdr#{$size} {
+        @include rem(border-bottom-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'bottom' {
+      .rdb#{$size} {
+        @include rem(border-top-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'left' {
+      .rdr#{$size} {
+        @include rem(border-bottom-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
   }
 }

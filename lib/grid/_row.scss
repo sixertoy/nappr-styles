@@ -1,3 +1,7 @@
+.rows {
+  @extend .flex-rows;
+}
+
 .rows .row-100,
 .rows .row-80,
 .rows .row-75,

@@ -1,5 +1,5 @@
 $default-padding: 12px !default;
-$MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
+$MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 26, 48) !default;
 
 @each $size in $MarginPaddingSizes {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
@@ -16,9 +16,7 @@ $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
       .p#{$size} {
         @include rem(padding, $pixelValue);
       }
-    }
-
-    @else if $side == 'topbottom' {
+    } @else if $side == 'topbottom' {
       .my#{$size} {
         @include rem(margin-top, $pixelValue);
         @include rem(margin-bottom, $pixelValue);
@@ -28,9 +26,7 @@ $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
         @include rem(padding-top, $pixelValue);
         @include rem(padding-bottom, $pixelValue);
       }
-    }
-
-    @else if $side == 'leftright' {
+    } @else if $side == 'leftright' {
       .mx#{$size} {
         @include rem(margin-left, $pixelValue);
         @include rem(margin-right, $pixelValue);
@@ -40,9 +36,7 @@ $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
         @include rem(padding-left, $pixelValue);
         @include rem(padding-right, $pixelValue);
       }
-    }
-
-    @else {
+    } @else {
       .m#{str-slice($side, 0, 1)}#{$size} {
         @include rem(margin-#{$side}, $pixelValue);
       }

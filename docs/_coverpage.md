@@ -5,4 +5,4 @@
 > A collection of CSS/SCSS helpers
 
 [GitHub](https://github.com/sixertoy/napper-styles)
-[Get Started](#docsify)
+[Get Started](/pages/quick-start.md)

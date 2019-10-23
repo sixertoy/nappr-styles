@@ -1,11 +1,3 @@
 @import 'col';
 @import 'row';
 @import 'wrap';
-
-.columns {
-  @extend .flex-columns;
-}
-
-.rows {
-  @extend .flex-rows;
-}

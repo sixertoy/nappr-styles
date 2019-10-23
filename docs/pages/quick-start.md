@@ -1,4 +1,14 @@
-# Variables
+# Napper Styles (SASS/CSS)
+
+> A collection of CSS/SCSS helpers
+
+## Installation
+
+```bash
+git clone git@github.com:sixertoy/napper-styles.git
+```
+
+## Variables
 
 ```sass
 $body-width: 100% !default;

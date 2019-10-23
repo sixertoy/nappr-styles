@@ -21,15 +21,26 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
   flex-direction: column;
 }
 
-.flex-justify {
-  flex-grow: 1;
-  flex-basis: 0;
-  flex-shrink: 1;
+.flex-wrap {
+  flex-wrap: wrap;
 }
 
-.flex-end {
-  justify-content: flex-end;
+.flex-wrap-inverse {
+  flex-wrap: wrap-reverse;
 }
+
+.flex-wrapper {
+  @extend .flex-columns;
+  @extend .flex-between;
+
+  flex-wrap: wrap;
+}
+
+/* -----------------------------------------------------
+
+  Flexbox Layouts (Distribution)
+
+----------------------------------------------------- */
 
 .flex-start {
   justify-content: start;
@@ -37,6 +48,10 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 
 .flex-center {
   justify-content: center;
+}
+
+.flex-end {
+  justify-content: flex-end;
 }
 
 .flex-between {
@@ -47,29 +62,34 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
   justify-content: space-around;
 }
 
-.flex-wrap {
-  flex-wrap: wrap;
+.flex-evenly {
+  justify-content: space-evenly;
 }
 
-.flex-wrap-inverse {
-  flex-wrap: wrap-reverse;
+.flex-justify > * {
+  flex-grow: 1;
+  flex-basis: auto;
+  flex-shrink: 1;
+}
+
+.flex-stretch {
+  justify-content: stretch;
+}
+
+/* -----------------------------------------------------
+
+  Items Spacers
+
+----------------------------------------------------- */
+
+.items-start {
+  align-items: flex-start;
 }
 
 .items-center {
   align-items: center;
 }
 
-.items-start {
-  align-items: flex-start;
-}
-
 .items-end {
   align-items: flex-end;
-}
-
-.flex-wrapper {
-  @extend .flex-columns;
-  @extend .flex-between;
-
-  flex-wrap: wrap;
 }

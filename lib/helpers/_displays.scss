@@ -2,6 +2,38 @@
   border-radius: 50%;
 }
 
+/* --------------------------------------------
+
+ TYPES
+
+-------------------------------------------- */
+
+.is-flex {
+  display: flex;
+}
+
+.is-block {
+  display: block;
+}
+
+.is-inline {
+  display: inline;
+}
+
+.is-inline-block {
+  display: inline-block;
+}
+
+/* --------------------------------------------
+
+ POSITIONS
+
+-------------------------------------------- */
+
+.is-relative {
+  position: relative;
+}
+
 .is-absolute {
   position: absolute;
 }
@@ -10,9 +42,11 @@
   position: fixed;
 }
 
-.is-relative {
-  position: relative;
-}
+/* --------------------------------------------
+
+ PLACEMENTS
+
+-------------------------------------------- */
 
 .is-top-left {
   top: 0;
@@ -56,21 +90,11 @@
   @extend .is-left-to-right;
 }
 
-.is-flex {
-  display: flex;
-}
+/* --------------------------------------------
 
-.is-block {
-  display: block;
-}
+ SIZES
 
-.is-inline {
-  display: inline;
-}
-
-.is-inline-block {
-  display: inline-block;
-}
+-------------------------------------------- */
 
 .is-full-width {
   width: 100%;

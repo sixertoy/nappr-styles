@@ -1,3 +1,7 @@
+.columns {
+  @extend .flex-columns;
+}
+
 .columns .col-100,
 .columns .col-80,
 .columns .col-75,

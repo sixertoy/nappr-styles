@@ -12,9 +12,12 @@
 
 @mixin withSize($width, $height: null) {
   @include width($width);
+
   @if ($height) {
     @include height($height);
-  } @else {
+  }
+
+  @else {
     @include height($width);
   }
 }

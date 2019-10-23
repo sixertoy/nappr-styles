@@ -26,7 +26,7 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "predocs": "node-sass -r --output-style=compressed ./docs/assets/wrapper.scss ./docs/assets/styles.css",
+    "predocs": "node-sass -r --output-style=compressed ./docs/assets/_wrapper.scss ./docs/assets/view-source-plugin.css",
     "docs": "docsify serve docs",
     "dev": "node-sass -w -r --output-style=compressed ./styles.scss ./styles.css",
     "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css"

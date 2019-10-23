@@ -175,6 +175,10 @@ pre {
   white-space: pre-wrap;
 }
 
+p {
+  white-space: initial;
+}
+
 button,
 [role='reset'],
 [role='submit'],

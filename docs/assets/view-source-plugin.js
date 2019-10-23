@@ -1,40 +1,66 @@
+const LINE_BREAKS_REGEX = /(\r\n|\n|\r)/gm;
+const CLASS_PLUGIN_EXAMPLE = 'docsify-example';
+const CLASS_HIDDEN = '__docsify-view-source-hidden';
+const CLASS_PREVIEW = '__docsify-view-source-preview';
+const CLASS_CODE_SOURCE = '__docsify-view-source-code';
+const CLASS_VIEW_SOURCE_PLUGIN_CONTAINER = '__docsify-view-source-container';
+
 const noop = v => v;
 
-const wrapElement = marked => example => {
+const addPluginCodeClick = elm =>
+  elm.addEventListener('click', evt => {
+    const notVisible = elm.querySelector(`:scope > .${CLASS_HIDDEN}`);
+    const visible = elm.querySelector(`:scope > :not(.${CLASS_HIDDEN})`);
+    notVisible.classList.remove(CLASS_HIDDEN);
+    visible.classList.add(CLASS_HIDDEN);
+  });
+
+const createPluginCodeViews = (nodeElement, marked) => {
+  const { parentNode, innerHTML } = nodeElement;
+
   // creation du container
   const container = document.createElement('div');
-  container.className = 'docs-container';
-  // insert example element into container
-  example.parentNode.insertBefore(container, example);
-  container.appendChild(example);
-  // inject code after example element
-  let source = example.innerHTML.trim();
-  source = '```html\n' + source + '\n```';
-  source = marked.lexer(source);
-  source = marked.parser(source);
-  source = `<div class="source pre-is-hidden">${source}</div>`;
-  example.insertAdjacentHTML('afterend', source);
-  return container;
-};
+  container.className = CLASS_VIEW_SOURCE_PLUGIN_CONTAINER;
+  parentNode.insertBefore(container, nodeElement);
 
-const addClickToElement = elm =>
-  elm.addEventListener('click', evt => {
-    const notVisible = elm.querySelector(':scope > .pre-is-hidden');
-    const visible = elm.querySelector(':scope > :not(.pre-is-hidden)');
-    notVisible.classList.remove('pre-is-hidden');
-    visible.classList.add('pre-is-hidden');
-  });
+  // creation du container de preview
+  const preview = document.createElement('div');
+  preview.className = CLASS_PREVIEW;
+  container.appendChild(preview);
+
+  // creation du container de code source
+  const sourceCode = document.createElement('div');
+  sourceCode.className = `${CLASS_CODE_SOURCE} ${CLASS_HIDDEN}`;
+  container.appendChild(sourceCode);
+
+  // insertion du code d'example sans les sauts de ligne
+  const cleanInnerHTML = innerHTML.trim().replace(LINE_BREAKS_REGEX, '');
+  preview.innerHTML = cleanInnerHTML;
+
+  // insertion du code source en markdown
+  let markdownSourceContent = `${'```html'}\n${innerHTML}\n${'```'}`;
+  markdownSourceContent = marked.lexer(markdownSourceContent);
+  markdownSourceContent = marked.parser(markdownSourceContent);
+  sourceCode.innerHTML = markdownSourceContent;
+
+  // retourne l'element d'origine
+  return nodeElement;
+};
 
 const viewSourcePlugin = function(hook, vm) {
   const marked = window.marked || noop;
   hook.doneEach(() => {
-    let queriesElts = document.querySelectorAll('pre.example');
+    let queriesElts = document.querySelectorAll(`.${CLASS_PLUGIN_EXAMPLE}`);
     let targets = Array.apply(null, queriesElts);
-    targets.forEach(wrapElement(marked));
+    targets
+      .map(elt => createPluginCodeViews(elt, marked))
+      .forEach(elt => elt.parentNode.removeChild(elt));
+
     // add clicks
-    queriesElts = document.querySelectorAll('.docs-container');
+    const classe = `.${CLASS_VIEW_SOURCE_PLUGIN_CONTAINER}`;
+    queriesElts = document.querySelectorAll(classe);
     targets = Array.apply(null, queriesElts);
-    targets.forEach(addClickToElement);
+    targets.forEach(addPluginCodeClick);
   });
 };
 

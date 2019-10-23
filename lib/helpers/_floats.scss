@@ -1,27 +1,31 @@
 .clearfix {
   *zoom: 1;
+
+  &::after,
+  &::before {
+    width: 0;
+    height: 0;
+    content: '.';
+    font-size: 0;
+    line-height: 0;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  &::after {
+    clear: both;
+  }
 }
 
-.clearfix::after,
-.clearfix::before {
-  width: 0;
-  height: 0;
-  content: '.';
-  font-size: 0;
-  line-height: 0;
-  display: block;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-.clearfix::after {
+.clear {
   clear: both;
 }
 
-.float-left {
+.clearfix > .float-left {
   float: left;
 }
 
-.float-right {
+.clearfix > .float-right {
   float: right;
 }
