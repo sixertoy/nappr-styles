@@ -17,11 +17,11 @@
     @extend .py24;
     @extend .px26;
 
-    background-color: #f8f8f8;
+    background-color: #F8F8F8;
   }
 
   .__docsify-view-source-code {
-    background-color: #f9da9b;
+    background-color: #F9DA9B;
 
     pre,
     code {
@@ -29,7 +29,7 @@
     }
 
     pre::after {
-      color: #ffffff;
+      color: #FFFFFF;
     }
   }
 
@@ -44,19 +44,15 @@
 
 ---------------------------------------- */
 
-// .docs-palette {
-//   @extend .is-flex;
-//   @extend .flex-center;
-//   @extend .items-center;
-//
-//   height: 70px;
-//   text-align: center;
-//   border: 1px solid #cccccc;
-// }
-//
-// .docs-bg-blue {
-//   background-color: #5db0d7;
-// }
+.docsify-view-source-palette {
+  @extend .is-flex;
+  @extend .flex-center;
+  @extend .items-center;
+
+  height: 70px;
+  text-align: center;
+  border: 1px solid #CCCCCC;
+}
 
 /* ----------------------------------------
 
