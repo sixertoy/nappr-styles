@@ -26,9 +26,9 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "predocs": "node-sass -r --output-style=compressed ./docs/assets/_wrapper.scss ./docs/assets/view-source-plugin.css",
+    "predocs": "node-sass -r --output-style=compressed ./docs/docs.theme.scss ./docs/docs.theme.css",
     "docs": "docsify serve docs",
-    "dev": "node-sass -w -r --output-style=compressed ./styles.scss ./styles.css",
+    "dev": "yarn build --watch",
     "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css"
   }
 }

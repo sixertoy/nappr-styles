@@ -2,7 +2,7 @@
   "extends": ["stylelint-config-standard"],
   "plugins": ["stylelint-scss"],
   "rules": {
-    "color-hex-case": "upper",
+    "color-hex-case": "lower",
     "color-hex-length": "long",
     "declaration-colon-newline-after": "always-multi-line",
     "at-rule-no-unknown": [
