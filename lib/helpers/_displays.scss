@@ -20,6 +20,12 @@
   display: inline;
 }
 
+.is-inflex,
+.is-inline-flex {
+  display: inline-flex;
+}
+
+.is-inblock,
 .is-inline-block {
   display: inline-block;
 }
