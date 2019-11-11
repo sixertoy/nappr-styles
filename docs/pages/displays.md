@@ -24,11 +24,71 @@
 
 #### .is-fixed
 
+> Applique la règle `position: fixed` à l'élément
+
 #### .is-relative
+
+> Applique la règle `position: relative` à l'élément
 
 #### .is-absolute
 
-## Sizes
+> Applique la règle `position: absolute` à l'élément
+
+## Positionnements
+
+#### .is-top-left
+
+> Place l'élément en haut à gauche d'un bloc en position absolu
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-top-left" style="background-color:#000; width:20px;height:20px;" />
+  </div>
+</pre>
+
+#### .is-top-right
+
+> Place l'élément en haut à droite d'un bloc en position absolu
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-top-right" style="background-color:#000; width:20px;height:20px;" />
+  </div>
+</pre>
+
+#### .is-bottom-right
+
+> Place l'élément en bas à droite d'un bloc en position absolu
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-bottom-right" style="background-color:#000; width:20px;height:20px;" />
+  </div>
+</pre>
+
+#### .is-bottom-left
+
+> Place l'élément en bas à gauche d'un bloc en position absolu
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-bottom-left" style="background-color:#000; width:20px;height:20px;" />
+  </div>
+</pre>
+
+#### .is-top-to-bottom {
+
+top: 0;
+bottom: 0;
+}
+
+#### .is-left-to-right {
+
+left: 0;
+right: 0;
+}
+
+## Dimensions
 
 #### .is-full-width
 
