@@ -1,6 +1,6 @@
 <!-- ![logo](_media/icon.svg) -->
 
-# Napper Styles <small>0.2.5</small>
+# Napper Styles [![npm version](https://badge.fury.io/js/napper-styles.svg)](https://badge.fury.io/js/napper-styles)
 
 > A collection of CSS/SCSS helpers
 

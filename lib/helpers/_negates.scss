@@ -123,10 +123,12 @@ a.no-no-underline:visited {
   overflow: hidden !important;
 }
 
+.nowrap,
 .no-wrap {
   white-space: nowrap;
 }
 
+.no-nowrap,
 .no-no-wrap {
   white-space: nowrap !important;
 }

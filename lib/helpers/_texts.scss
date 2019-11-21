@@ -30,7 +30,8 @@ Alignments
 
 .text-overflow,
 .text-ellipsis {
-  white-space: nowrap;
+  @extend .no-wrap;
+
   text-overflow: ellipsis;
 }
 

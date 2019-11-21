@@ -29,6 +29,7 @@
     "predocs": "node-sass -r --output-style=compressed ./docs/docs.theme.scss ./docs/docs.theme.css",
     "docs": "docsify serve docs",
     "dev": "yarn build --watch",
-    "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css"
+    "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css",
+    "preversion": ""
   }
 }
