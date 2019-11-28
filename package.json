@@ -8,7 +8,7 @@
   "license": "ISC",
   "private": true,
   "engines": {
-    "node": ">=10.6.0"
+    "node": "^10.6.0 || ^12.13.1"
   },
   "files": [
     "lib/",
