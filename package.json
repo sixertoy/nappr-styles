@@ -3,6 +3,7 @@
   "version": "0.2.9",
   "description": "A collection of SCSS helpers",
   "main": "./styles.css",
+  "homepage": "https://sixertoy.github.io/napper-styles",
   "repository": "https://github.com/sixertoy/napper-styles",
   "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
   "license": "ISC",
