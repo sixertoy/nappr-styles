@@ -1,6 +1,6 @@
 {
   "name": "@iziges/napper-styles",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "A collection of SCSS helpers",
   "main": "./styles.css",
   "repository": "https://github.com/sixertoy/napper-styles",
