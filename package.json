@@ -18,6 +18,7 @@
     "styles.scss"
   ],
   "devDependencies": {
+    "docsify": "^4.9.4",
     "node-sass": "4.10.0",
     "prettier": "1.14.3",
     "prettier-stylelint": "0.4.2",
@@ -28,7 +29,7 @@
   },
   "scripts": {
     "predocs": "node-sass -r --output-style=compressed ./docs/docs.theme.scss ./docs/docs.theme.css",
-    "docs": "docsify serve docs",
+    "docs": "$(yarn bin)/docsify serve docs",
     "dev": "yarn build --watch",
     "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css",
     "preversion": ""
