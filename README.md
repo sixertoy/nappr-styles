@@ -8,7 +8,7 @@ yarn add https://github.com/sixertoy/napper-styles.git#latest
 
 ## Usage
 
-`variables.js`
+`variables.scss`
 
 ```css
 $body-width: 100% !default;
@@ -23,7 +23,7 @@ $FontSizes: (11, 12) !default;
 $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
 ```
 
-`index.js`
+`index.scss`
 
 ```css
 @import './_variables.scss';
