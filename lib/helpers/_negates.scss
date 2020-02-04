@@ -3,6 +3,22 @@
  NEGATES
 
 ------------------------------------------------- */
+.no-flex-grow {
+  flex: 0 1;
+}
+
+.no-no-flex-grow {
+  flex: 0 1 !important;
+}
+
+.no-flex-shrink {
+  flex: 1 0;
+}
+
+.no-no-flex-shrink {
+  flex: 1 0 !important;
+}
+
 .no-float {
   float: none;
 }

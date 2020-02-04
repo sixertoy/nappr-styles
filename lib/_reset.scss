@@ -1,8 +1,8 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
+  margin: 0;
   -webkit-overflow-scrolling: touch;
+  padding: 0;
 }
 
 html,
@@ -91,10 +91,10 @@ video {
    License: none (public domain)
   */
   border: 0;
-  margin: 0;
-  padding: 0;
   font: inherit;
   font-size: 100%;
+  margin: 0;
+  padding: 0;
   vertical-align: baseline;
 }
 
@@ -114,20 +114,20 @@ section {
 
 html,
 body {
-  margin: 0;
-  padding: 0;
   height: 100%;
+  margin: 0;
   min-height: 100%;
+  padding: 0;
 }
 
 body {
   color: #000000;
-  line-height: 1;
-  width: $body-width;
-  font-size: $body-font-size;
   font-family: Helvetica, Arial, Verdana, sans-serif;
+  font-size: $body-font-size;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  line-height: 1;
+  width: $body-width;
 }
 
 hr,
@@ -171,8 +171,8 @@ button {
 }
 
 pre {
-  word-wrap: break-word;
   white-space: pre-wrap;
+  word-wrap: break-word;
 }
 
 p {
@@ -183,16 +183,16 @@ button,
 [role='reset'],
 [role='submit'],
 [role='button'] {
-  border: 0;
-  font-size: 1rem;
-  cursor: pointer;
-  overflow: hidden;
-  user-select: none;
-  text-align: center;
-  white-space: nowrap;
-  text-decoration: none;
   background: transparent;
+  border: 0;
+  cursor: pointer;
+  font-size: 1rem;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
   text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
 }
 
 a:not(.is-underline),
@@ -212,9 +212,9 @@ a:visited:not(.is-underline) {
 :disabled:visited,
 :disabled:hover,
 :disabled:active {
+  box-shadow: inherit;
   cursor: default;
   cursor: not-allowed;
-  box-shadow: inherit;
-  text-shadow: inherit;
   pointer-events: none;
+  text-shadow: inherit;
 }
