@@ -1,0 +1,46 @@
+@each $size in $BorderRadiusSizes {
+  $sides: (all, top, left, right, bottom);
+
+  $pixelValue: number-to-pixel($size);
+
+  @each $side in $sides {
+    @if $side == 'all' {
+      // all border radius
+      .bdr#{$size} {
+        @include rem(border-radius, $pixelValue);
+      }
+    }
+
+    @else if $side == 'top' {
+      .bdrt#{$size} {
+        @include rem(border-top-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'right' {
+      .bdrr#{$size} {
+        @include rem(border-bottom-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'bottom' {
+      .bdrb#{$size} {
+        @include rem(border-top-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'left' {
+      .bdrr#{$size} {
+        @include rem(border-bottom-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+  }
+}

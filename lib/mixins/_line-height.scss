@@ -1,7 +1,7 @@
 @each $size in $FontSizes {
   $pixelValue: number-to-pixel($size);
 
-  .fs#{$size} {
-    @include rem(font-size, $pixelValue);
+  .lh#{$size} {
+    @include rem(line-height, $pixelValue);
   }
 }

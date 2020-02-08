@@ -1,14 +1,13 @@
 table {
   @include rem(font-size, 12px);
-
-  width: 100%;
+  // table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 0;
   max-width: 100%;
   min-width: 100%;
   overflow: scroll;
   text-align: left;
-  border-spacing: 0;
-  // table-layout: fixed;
-  border-collapse: collapse;
+  width: 100%;
 }
 
 table th {
@@ -19,10 +18,10 @@ table th,
 table td {
   @include rem(padding, 12px 15px);
 
-  overflow: hidden;
   display: table-cell;
-  white-space: nowrap;
+  overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 table th:last-child,
