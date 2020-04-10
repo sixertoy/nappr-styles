@@ -1,9 +1,19 @@
 #!/bin/bash
 
-OUTPUT_FILE=./styles.css
-INPUT_FILE=./lib/styles.scss
+INPUT_FILE=./styles.scss
+OUTPUT_FILE=./dist/styles.css
 
 echo -e "\033[32mBuilding SASS files\033[m"
+
+if [ -f $OUTPUT_FILE ];
+then
+  rm $OUTPUT_FILE
+fi
+
+$(yarn bin)/node-sass --recursive --output-style=compressed $INPUT_FILE $OUTPUT_FILE
+
+INPUT_FILE=./docs.theme.scss
+OUTPUT_FILE=./docs/docs.theme.css
 
 if [ -f $OUTPUT_FILE ];
 then

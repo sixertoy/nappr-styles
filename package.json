@@ -1,20 +1,20 @@
 {
-  "name": "@iziges/napper-styles",
+  "name": "@nappr/nappr-styles",
   "version": "0.2.11",
   "description": "A collection of SCSS helpers",
-  "main": "./styles.css",
-  "homepage": "https://sixertoy.github.io/napper-styles",
-  "repository": "https://github.com/sixertoy/napper-styles",
-  "author": "Matthieu Lassalvy <sixertoy.github@gmail.com>",
+  "main": "./styles.scss",
+  "browser": "./dist/styles.css",
+  "homepage": "https://sixertoy.github.io/nappr-styles",
+  "repository": "https://github.com/sixertoy/nappr-styles",
+  "author": "sixertoy <sixertoy.github@gmail.com>",
   "license": "ISC",
-  "private": true,
   "engines": {
     "node": "^10.6.0 || ^12.13.1"
   },
   "files": [
-    "lib/",
-    "docs/",
-    "styles.css",
+    "lib",
+    "dist",
+    "docs",
     "styles.scss"
   ],
   "devDependencies": {
@@ -28,10 +28,9 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "predocs": "node-sass -r --output-style=compressed ./docs/docs.theme.scss ./docs/docs.theme.css",
-    "docs": "$(yarn bin)/docsify serve docs",
-    "dev": "yarn build --watch",
-    "build": "node-sass -r --output-style=compressed ./styles.scss ./styles.css",
-    "preversion": ""
+    "build": "./.scripts/build.sh",
+    "predocs": "yarn build",
+    "docs": "docsify serve docs --port=2999",
+    "dev": "node-sass styles.scss -o=dist -r --output-style=compressed"
   }
 }

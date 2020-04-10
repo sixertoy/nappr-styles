@@ -1,15 +1,15 @@
 .__docsify-view-source-container {
   // applique la librairie de styles
   // aux exemples de la documentation
-  @import './../styles.scss';
+  @import './styles.scss';
 }
 
 .docs-palette {
+  align-items: center;
+  border: 1px solid #cccccc;
+  display: flex;
   flex: 1;
   height: 70px;
-  display: flex;
-  text-align: center;
-  align-items: center;
   justify-content: center;
-  border: 1px solid #cccccc;
+  text-align: center;
 }
