@@ -28,9 +28,9 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
-    "build": "./.scripts/build.sh",
     "predocs": "yarn build",
     "docs": "docsify serve docs --port=2999",
-    "dev": "node-sass styles.scss -o=dist -r --output-style=compressed"
+    "dev": "node-sass styles.scss -o=dist -r --output-style=compressed",
+    "build": "./.scripts/build.sh"
   }
 }

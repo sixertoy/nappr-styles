@@ -1,9 +1,9 @@
-# Napper Styles (SASS/CSS)
+# NAPPR Styles (SASS/CSS)
 
 ## Install
 
 ```bash
-yarn add https://github.com/sixertoy/napper-styles.git#latest
+yarn add https://github.com/sixertoy/nappr-styles.git#latest
 ```
 
 ## Usage
@@ -27,5 +27,5 @@ $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
 
 ```css
 @import './_variables.scss';
-@import '~@iziges/napper-styles/styles.scss';
+@import '~@nappr/nappr-styles/styles.scss';
 ```
