@@ -45,6 +45,10 @@ Font Weight
 
 ---------------------------- */
 
+.is-thin {
+  font-weight: 100;
+}
+
 .is-light {
   font-weight: 300;
 }
@@ -52,6 +56,10 @@ Font Weight
 .is-normal,
 .is-regular {
   font-weight: 400;
+}
+
+.is-medium {
+  font-weight: 500;
 }
 
 .is-semi-bold {
@@ -62,6 +70,7 @@ Font Weight
   font-weight: 700;
 }
 
+.is-black,
 .is-extra-bold {
   font-weight: 900;
 }
