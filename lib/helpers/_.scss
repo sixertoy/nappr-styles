@@ -5,18 +5,4 @@
 @import 'floats';
 @import 'scrolls';
 @import 'texts';
-
-// https://developer.mozilla.org/en-US/docs/Web/CSS/cursor#Values
-.use-hand,
-.use-pointer {
-  cursor: pointer;
-}
-
-.use-cursor {
-  cursor: default;
-  cursor: none;
-}
-
-.use-move {
-  cursor: move;
-}
+@import 'pointers';

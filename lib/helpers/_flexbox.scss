@@ -7,17 +7,14 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 }
 
 .flex-columns {
-  @extend .flex-1;
-  @extend .is-flex;
-
   display: flex;
+  flex: 1;
   flex-direction: row;
 }
 
 .flex-rows {
-  @extend .flex-1;
-  @extend .is-flex;
-
+  display: flex;
+  flex: 1;
   flex-direction: column;
 }
 
@@ -30,10 +27,11 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 }
 
 .flex-wrapper {
-  @extend .flex-columns;
-  @extend .flex-between;
-
+  display: flex;
+  flex: 1;
+  flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 /* -----------------------------------------------------

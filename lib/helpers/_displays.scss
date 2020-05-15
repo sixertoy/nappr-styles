@@ -32,14 +32,15 @@
 
 .is-overlay {
   @extend .is-absolute;
-  @extend .is-top-to-bottom;
-  @extend .is-left-to-right;
+  @extend .is-trbl;
 }
 
+.is-popin,
+.is-popup,
 .is-fixed-overlay {
   @extend .is-fixed;
   @extend .is-top-to-bottom;
-  @extend .is-left-to-right;
+  @extend .is-trbl;
 }
 
 /* --------------------------------------------
@@ -60,20 +61,31 @@
   position: fixed;
 }
 
+.is-sticky {
+  position: sticky;
+}
+
 /* --------------------------------------------
 
  ABSOLUTE PLACEMENTS
 
 -------------------------------------------- */
 
-.is-top-left {
-  top: 0;
+.is-trbl {
+  bottom: 0;
   left: 0;
+  right: 0;
+  top: 0;
+}
+
+.is-top-left {
+  left: 0;
+  top: 0;
 }
 
 .is-top-right {
-  top: 0;
   right: 0;
+  top: 0;
 }
 
 .is-bottom-right {
@@ -87,8 +99,8 @@
 }
 
 .is-top-to-bottom {
-  top: 0;
   bottom: 0;
+  top: 0;
 }
 
 .is-left-to-right {
@@ -103,15 +115,15 @@
 -------------------------------------------- */
 
 .is-full-width {
-  width: 100%;
-  min-width: 100%;
   max-width: 100%;
+  min-width: 100%;
+  width: 100%;
 }
 
 .is-full-height {
   height: 100%;
-  min-height: 100%;
   max-height: 100%;
+  min-height: 100%;
 }
 
 .is-full-layout {

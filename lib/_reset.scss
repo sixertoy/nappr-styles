@@ -195,19 +195,8 @@ button,
   white-space: nowrap;
 }
 
-a:not(.is-underline),
-a:link:not(.is-underline),
-a:hover:not(.is-underline),
-a:active:not(.is-underline),
-a:visited:not(.is-underline) {
-  text-decoration: none;
-}
-
 .disabled,
 :disabled,
-// @NOTE
-// a:hover DOIT venir après a:link et a:visited
-// a:active DOIT venir après un a:hover
 :disabled:link,
 :disabled:visited,
 :disabled:hover,
@@ -218,3 +207,16 @@ a:visited:not(.is-underline) {
   pointer-events: none;
   text-shadow: inherit;
 }
+
+/*
+// @NOTE
+// a:hover DOIT venir après a:link et a:visited
+// a:active DOIT venir après un a:hover
+a:not(.is-underline),
+a:link:not(.is-underline),
+a:visited:not(.is-underline),
+a:hover:not(.is-underline),
+a:active:not(.is-underline) {
+  text-decoration: none;
+}
+*/

@@ -23,6 +23,16 @@
   overflow-y: scroll;
 }
 
+.scroll-x-auto {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scroll-y-auto {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 /* ----------------------------------------
 
  SCROLLBOX
@@ -34,22 +44,25 @@
 }
 
 .is-scrollbox {
-  @extend .scroll-y;
-  @extend .scroll-x;
   @extend .is-absolute;
   @extend .is-full-layout;
+
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .is-scrollbox-y {
   @extend .is-scrollbox;
-  @extend .no-scroll-x;
 
   height: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .is-scrollbox-x {
   @extend .is-scrollbox;
-  @extend .no-scroll-y;
 
-  width: auto;
+  height: auto;
+  overflow-x: auto;
+  overflow-y: hidden;
 }

@@ -6,37 +6,41 @@
   @each $side in $sides {
     @if $side == 'all' {
       // all border radius
-      .bdr#{$size} {
+      .rnd#{$size} {
         @include rem(border-radius, $pixelValue);
       }
     }
 
     @else if $side == 'top' {
-      .bdrt#{$size} {
+      .rnd-t#{$size} {
         @include rem(border-top-left-radius, $pixelValue);
-
-        border-style: $BorderStyle;
-      }
-    }
-
-    @else if $side == 'right' {
-      .bdrr#{$size} {
-        @include rem(border-bottom-right-radius, $pixelValue);
-
-        border-style: $BorderStyle;
-      }
-    }
-
-    @else if $side == 'bottom' {
-      .bdrb#{$size} {
         @include rem(border-top-right-radius, $pixelValue);
 
         border-style: $BorderStyle;
       }
     }
 
+    @else if $side == 'bottom' {
+      .rnd-b#{$size} {
+        @include rem(border-bottom-right-radius, $pixelValue);
+        @include rem(border-bottom-left-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
+    @else if $side == 'right' {
+      .rnd-t#{$size} {
+        @include rem(border-top-right-radius, $pixelValue);
+        @include rem(border-bottom-right-radius, $pixelValue);
+
+        border-style: $BorderStyle;
+      }
+    }
+
     @else if $side == 'left' {
-      .bdrr#{$size} {
+      .rnd-l#{$size} {
+        @include rem(border-top-left-radius, $pixelValue);
         @include rem(border-bottom-left-radius, $pixelValue);
 
         border-style: $BorderStyle;

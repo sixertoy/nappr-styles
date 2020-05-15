@@ -2,6 +2,10 @@
   color: $white;
 }
 
+.is-grey-text {
+  color: $grey;
+}
+
 .is-black-text {
   color: $black;
 }
@@ -90,6 +94,10 @@ Font Style
 
 .is-stroked {
   text-decoration: line-through;
+}
+
+.is-small-caps {
+  font-variant: small-caps;
 }
 
 .force-line-break {

@@ -3,14 +3,14 @@
 
   &::after,
   &::before {
-    width: 0;
-    height: 0;
     content: '.';
-    font-size: 0;
-    line-height: 0;
     display: block;
+    font-size: 0;
+    height: 0;
+    line-height: 0;
     overflow: hidden;
     visibility: hidden;
+    width: 0;
   }
 
   &::after {

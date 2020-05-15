@@ -21,6 +21,11 @@
   cursor: default;
 }
 
+.no-click,
+.not-allowed {
+  cursor: not-allowed;
+}
+
 input,
 label,
 select,
