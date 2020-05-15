@@ -9,106 +9,106 @@
 
 .no-events {
   pointer-events: none;
+}
 
-  .no-& {
-    pointer-events: none !important;
-  }
+.no-no-events {
+  pointer-events: none !important;
 }
 
 .no-flex-grow {
   flex: 0 1;
+}
 
-  .no-& {
-    flex: 0 1 !important;
-  }
+.no-no-flex-grow {
+  flex: 0 1 !important;
 }
 
 .no-flex-shrink {
   flex: 1 0;
+}
 
-  .no-& {
-    flex: 1 0 !important;
-  }
+.no-no-flex-shrink {
+  flex: 1 0 !important;
 }
 
 .no-float {
   float: none;
+}
 
-  .no-& {
-    float: none !important;
-  }
+.no-no-float {
+  float: none !important;
 }
 
 .no-flex {
   flex: none;
+}
 
-  .no-& {
-    flex: none !important;
-  }
+.no-no-flex {
+  flex: none !important;
 }
 
 .no-margin {
   margin: 0;
+}
 
-  .no-& {
-    margin: 0 !important;
-  }
+.no-no-margin {
+  margin: 0 !important;
 }
 
 .no-padding {
   padding: 0;
+}
 
-  .no-& {
-    padding: 0 !important;
-  }
+.no-no-padding {
+  padding: 0 !important;
 }
 
 .no-border {
   border: 0;
+}
 
-  .no-& {
-    border: 0 !important;
-  }
+.no-no-border {
+  border: 0 !important;
 }
 
 .no-radius {
   border-radius: 0;
+}
 
-  .no-& {
-    border-radius: 0 !important;
-  }
+.no-no-radius {
+  border-radius: 0 !important;
 }
 
 .no-background {
   background-color: transparent;
+}
 
-  .no-& {
-    background: none !important;
-  }
+.no-no-background {
+  background: none !important;
 }
 
 .no-outline {
   outline: none;
+}
 
-  .no-& {
-    outline: none !important;
-  }
+.no-no-outline {
+  outline: none !important;
 }
 
 .no-pointer {
   cursor: default;
+}
 
-  .no-& {
-    cursor: default !important;
-  }
+.no-no-pointer {
+  cursor: default !important;
 }
 
 .no-select {
   user-select: none;
+}
 
-  .no-& {
-    user-select: none !important;
-  }
+.no-no-select {
+  user-select: none !important;
 }
 
 .no-underline,
@@ -130,26 +130,27 @@ a.no-no-underline:visited {
 .no-scroll,
 .no-overflow {
   overflow: hidden;
+}
 
-  .no-& {
-    overflow: hidden !important;
-  }
+.no-no-overflow,
+.no-no-scroll {
+  overflow: hidden !important;
 }
 
 .no-scroll-x {
   overflow-x: hidden;
+}
 
-  .no-& {
-    overflow-x: hidden !important;
-  }
+.no-no-scroll-x {
+  overflow-x: hidden !important;
 }
 
 .no-scroll-y {
   overflow-y: hidden;
+}
 
-  .no-& {
-    overflow-y: hidden !important;
-  }
+.no-no-scroll-y {
+  overflow-y: hidden !important;
 }
 
 .nowrap,
