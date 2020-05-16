@@ -6,13 +6,13 @@
   @each $side in $sides {
     @if $side == 'all' {
       // all border radius
-      .rnd#{$size} {
+      .rad#{$size} {
         @include rem(border-radius, $pixelValue);
       }
     }
 
     @else if $side == 'top' {
-      .rnd-t#{$size} {
+      .radt#{$size} {
         @include rem(border-top-left-radius, $pixelValue);
         @include rem(border-top-right-radius, $pixelValue);
 
@@ -21,7 +21,7 @@
     }
 
     @else if $side == 'bottom' {
-      .rnd-b#{$size} {
+      .radb#{$size} {
         @include rem(border-bottom-right-radius, $pixelValue);
         @include rem(border-bottom-left-radius, $pixelValue);
 
@@ -30,7 +30,7 @@
     }
 
     @else if $side == 'right' {
-      .rnd-t#{$size} {
+      .radt#{$size} {
         @include rem(border-top-right-radius, $pixelValue);
         @include rem(border-bottom-right-radius, $pixelValue);
 
@@ -39,7 +39,7 @@
     }
 
     @else if $side == 'left' {
-      .rnd-l#{$size} {
+      .radl#{$size} {
         @include rem(border-top-left-radius, $pixelValue);
         @include rem(border-bottom-left-radius, $pixelValue);
 
