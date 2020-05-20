@@ -1,0 +1,34 @@
+.square-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.square-grid-2 {
+  margin: 0 1% 1% 0;
+  max-width: 49%;
+  min-width: 49%;
+  width: 49%;
+}
+
+.square-grid-3 > * {
+  margin: 0 1% 1% 0;
+  max-width: 32%;
+  min-width: 32%;
+  width: 32%;
+}
+
+.square-grid-4 > * {
+  margin: 0 1% 1% 0;
+  max-width: 24%;
+  min-width: 24%;
+  width: 24%;
+}
+
+.square-grid-5 > * {
+  margin: 0 1% 1% 0;
+  max-width: 19%;
+  min-width: 19%;
+  width: 19%;
+}
