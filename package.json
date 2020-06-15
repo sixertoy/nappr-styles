@@ -9,7 +9,7 @@
   "author": "sixertoy <sixertoy.github@gmail.com>",
   "license": "ISC",
   "engines": {
-    "node": "^10.6.0 || ^12.13.1"
+    "node": "^12.13.1"
   },
   "files": [
     "lib",
@@ -28,6 +28,7 @@
     "stylelint-scss": "3.3.2"
   },
   "scripts": {
+    "cleanup": "rm -rf node_modules && rm yarn.lock",
     "predocs": "yarn build",
     "docs": "docsify serve docs --port=2999",
     "dev": "node-sass styles.scss -o=dist -r --output-style=compressed",
