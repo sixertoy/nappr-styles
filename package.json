@@ -1,6 +1,6 @@
 {
   "name": "@nappr/nappr-styles",
-  "version": "0.2.16",
+  "version": "0.2.17",
   "description": "A collection of SCSS helpers",
   "main": "./styles.scss",
   "browser": "./dist/styles.css",
