@@ -2,6 +2,7 @@
 
 INPUT_FILE=./styles.scss
 OUTPUT_FILE=./dist/styles.css
+VERSION=$(node -p "require('./package.json').version")
 
 echo -e "\033[32mBuilding SASS files\033[m"
 
