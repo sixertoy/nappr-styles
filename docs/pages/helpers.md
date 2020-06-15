@@ -69,10 +69,10 @@ $BorderRadiusSizes: (2, 3, 4, 8, 10, 12);
 > - la totalité d'un bloc `.brad(n)`
 > - les 4 directions `.bradt(n), .bradr(n), .bradb(n), .bradl(n)`
 
-**L'example ci-dessous ajoute une bordure de 2px sur les positions top et bottom d'un bloc**
+**L'example ci-dessous ajoute un angle arrondi de 2px sur le haut d'un bloc**
 
 ```html
-<div class="rdx2" style="border-color: #CCCCCC;">
+<div class="bradt2" style="border-color: #CCCCCC;">
   <span>Lorem ipsum</span>
 </div>
 ```
