@@ -66,9 +66,8 @@ $BorderRadiusSizes: (2, 3, 4, 8, 10, 12);
 
 > Il est alors possible d'ajouter des angles arrondis à un bloc sur :
 >
-> - la totalité d'un bloc `.rd(n)`
-> - les 2 axes `.rdx(n) .rdy(n)`
-> - les 4 directions `.rdt(n), .rdr(n), .rd(n), .rdl(n)`
+> - la totalité d'un bloc `.brad(n)`
+> - les 4 directions `.bradt(n), .bradr(n), .bradb(n), .bradl(n)`
 
 **L'example ci-dessous ajoute une bordure de 2px sur les positions top et bottom d'un bloc**
 
