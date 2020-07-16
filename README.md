@@ -1,10 +1,11 @@
 # NAPPR Styles (SASS/CSS)
 
+[Documentation](https://sixertoy.github.io/nappr-styles)
+
 ## Install
 
-```bash
+````bash
 yarn add https://github.com/sixertoy/nappr-styles.git#latest
-```
 
 ## Usage
 
@@ -21,7 +22,7 @@ $default-padding: 12px !default;
 
 $FontSizes: (11, 12) !default;
 $MarginPaddingSizes: (3, 6, 9, 12, 18, 24, 48) !default;
-```
+````
 
 `index.scss`
 
