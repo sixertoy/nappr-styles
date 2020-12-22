@@ -44,7 +44,7 @@
 
 .is-overlay {
   @extend .is-absolute;
-  @extend .is-trbl;
+  @extend .is-zero-abs;
 }
 
 .is-popin,
@@ -52,7 +52,7 @@
 .is-fixed-overlay {
   @extend .is-fixed;
   @extend .is-top-to-bottom;
-  @extend .is-trbl;
+  @extend .is-zero-abs;
 }
 
 /* --------------------------------------------
@@ -83,6 +83,7 @@
 
 -------------------------------------------- */
 
+.is-zero-abs,
 .is-trbl {
   bottom: 0;
   left: 0;
@@ -90,31 +91,37 @@
   top: 0;
 }
 
+.is-top-left-abs,
 .is-top-left {
   left: 0;
   top: 0;
 }
 
+.is-top-right-abs,
 .is-top-right {
   right: 0;
   top: 0;
 }
 
+.is-bottom-right-abs,
 .is-bottom-right {
   bottom: 0;
   right: 0;
 }
 
+.is-bottom-left-abs,
 .is-bottom-left {
   bottom: 0;
   left: 0;
 }
 
+.is-top-to-bottom-abs,
 .is-top-to-bottom {
   bottom: 0;
   top: 0;
 }
 
+.is-left-to-right-abs,
 .is-left-to-right {
   left: 0;
   right: 0;
