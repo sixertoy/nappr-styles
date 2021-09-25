@@ -1,4 +1,4 @@
-@each $size in $BorderRadiusSizes {
+@each $size in $border-radius-map {
   $sides: (all, top, left, right, bottom);
 
   $pixelValue: number-to-pixel($size);
@@ -18,7 +18,7 @@
         @include rem(border-top-left-radius, $pixelValue);
         @include rem(border-top-right-radius, $pixelValue);
 
-        border-style: $BorderStyle;
+        border-style: $border-style;
       }
     }
 
@@ -28,7 +28,7 @@
         @include rem(border-bottom-right-radius, $pixelValue);
         @include rem(border-bottom-left-radius, $pixelValue);
 
-        border-style: $BorderStyle;
+        border-style: $border-style;
       }
     }
 
@@ -38,7 +38,7 @@
         @include rem(border-top-right-radius, $pixelValue);
         @include rem(border-bottom-right-radius, $pixelValue);
 
-        border-style: $BorderStyle;
+        border-style: $border-style;
       }
     }
 
@@ -48,7 +48,7 @@
         @include rem(border-top-left-radius, $pixelValue);
         @include rem(border-bottom-left-radius, $pixelValue);
 
-        border-style: $BorderStyle;
+        border-style: $border-style;
       }
     }
   }
