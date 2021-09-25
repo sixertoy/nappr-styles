@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $rem-px-only: true !default;
 $rem-fallback: true !default;
 
@@ -26,7 +28,9 @@ SOURCE: https://github.com/pierreburel/sass-rem
 }
 
 @mixin rem-baseline($zoom: 100%) {
-  font-size: $zoom / $body-font-size * $rem-baseline;
+  $div: math.div($zoom, $body-font-size);
+
+  font-size: $div * $rem-baseline;
 }
 
 @function rem-convert($to, $values...) {
@@ -35,7 +39,8 @@ SOURCE: https://github.com/pierreburel/sass-rem
 
   @each $value in $values {
     @if type-of($value) == 'number' and unit($value) == 'rem' and $to == 'px' {
-      $result: append($result, $value / 1rem * $rem-baseline, $separator);
+      $div: math.div($value, 1rem);
+      $result: append($result, $div * $rem-baseline, $separator);
     }
 
     @else if
@@ -45,7 +50,8 @@ SOURCE: https://github.com/pierreburel/sass-rem
       'px' and
       $to ==
       'rem' {
-      $result: append($result, $value / $rem-baseline * 1rem, $separator);
+      $div: math.div($value, $rem-baseline);
+      $result: append($result, $div * 1rem, $separator);
     }
 
     @else if type-of($value) == 'list' {

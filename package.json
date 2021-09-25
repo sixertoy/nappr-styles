@@ -1,6 +1,6 @@
 {
   "name": "@nappr/nappr-styles",
-  "version": "0.2.17",
+  "version": "0.2.20",
   "description": "A collection of SCSS helpers",
   "main": "./styles.scss",
   "browser": "./dist/styles.css",
@@ -15,13 +15,14 @@
     "lib",
     "dist",
     "docs",
-    "styles.scss"
+    "styles.scss",
+    "variables.module.scss"
   ],
   "devDependencies": {
     "docsify": "^4.9.4",
-    "node-sass": "4.10.0",
     "prettier": "1.14.3",
     "prettier-stylelint": "0.4.2",
+    "sass": "^1.41.0",
     "stylelint": "9.7.1",
     "stylelint-config-standard": "18.2.0",
     "stylelint-order": "0.8.1",
@@ -29,9 +30,9 @@
   },
   "scripts": {
     "cleanup": "rm -rf node_modules && rm yarn.lock",
-    "predocs": "yarn build",
     "docs": "docsify serve docs --port=2999",
-    "dev": "node-sass styles.scss -o=dist -r --output-style=compressed",
-    "build": "./.scripts/build.sh"
+    "dev": "sass styles.scss -o=dist -r --output-style=compressed",
+    "build": "./.scripts/build.sh",
+    "prepare": ""
   }
 }

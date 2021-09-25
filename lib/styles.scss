@@ -1,11 +1,13 @@
-@import 'variables';
-@import 'colors';
+/**
+ *
+ * !!! DO NOT REORDER -> Declarative loading
+ *
+ */
+@import 'variables/';
 @import 'reset';
-//
+@import 'globals';
 @import 'funcs/';
 @import 'mixins/';
-//
-@import 'grid/';
 @import 'helpers/';
 @import 'htmls/';
-@import 'theme';
+@import 'grid/';

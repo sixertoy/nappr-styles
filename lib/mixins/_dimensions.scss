@@ -1,3 +1,9 @@
+/**
+* USAGE:
+* ---------------------
+*
+* .w33 -> width 33%
+*/
 @mixin withHeight($size) {
   height: rem($size);
   max-height: rem($size);
@@ -24,4 +30,16 @@
 
 @mixin squareSize($size) {
   @include withSize($size);
+}
+
+@each $size in $dimensions-map {
+  $percentValue: ($size * 1%);
+
+  .w#{$size} {
+    width: $percentValue;
+  }
+
+  .h#{$size} {
+    height: $percentValue;
+  }
 }
