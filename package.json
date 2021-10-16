@@ -28,6 +28,9 @@
     "stylelint-order": "0.8.1",
     "stylelint-scss": "3.3.2"
   },
+  "peerDepencies": {
+    "sass": "^1.41.0"
+  },
   "scripts": {
     "cleanup": "rm -rf node_modules && rm yarn.lock",
     "docs": "docsify serve docs --port=2999",

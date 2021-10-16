@@ -8,5 +8,9 @@
 @use "variables/colors";
 @use "variables/breakpoints";
 
+// stylelint-disable-next-line
+// @debug meta.module-variables('colors');
+// @debug meta.module-variables('breakpoints');
+
 $PALETTE: meta.module-variables('colors');
 $BREAKPOINTS: meta.module-variables('breakpoints');
