@@ -8,9 +8,6 @@
   "repository": "https://github.com/sixertoy/nappr-styles",
   "author": "sixertoy <sixertoy.github@gmail.com>",
   "license": "ISC",
-  "engines": {
-    "node": "^12.13.1"
-  },
   "files": [
     "lib",
     "dist",
