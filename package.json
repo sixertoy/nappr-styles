@@ -29,7 +29,7 @@
     "sass": "^1.41.0"
   },
   "scripts": {
-    "cleanup": "rm -rf node_modules && rm yarn.lock",
+    "cleanup": "rm -rf node_modules",
     "docs": "docsify serve docs --port=2999",
     "dev": "sass styles.scss -o=dist -r --output-style=compressed",
     "build": "./.scripts/build.sh",
