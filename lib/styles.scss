@@ -4,10 +4,12 @@
  *
  */
 @import 'variables/';
-@import 'reset';
 @import 'globals';
 @import 'funcs/';
+
+// Core
 @import 'mixins/';
-@import 'helpers/';
+@import 'reset';
 @import 'htmls/';
+@import 'helpers/';
 @import 'grid/';

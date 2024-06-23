@@ -1,0 +1,9 @@
+:root {
+  @each $name, $value in $PALETTE {
+    --nappr-#{$name}: #{$value};
+  }
+
+  @each $name, $value in $BREAKPOINTS {
+    --nappr-#{$name}: #{$value};
+  }
+}
