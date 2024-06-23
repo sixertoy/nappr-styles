@@ -16,23 +16,23 @@
     "variables.module.scss"
   ],
   "devDependencies": {
-    "docsify": "^4.9.4",
-    "prettier": "1.14.3",
+    "docsify": "^4.13.1",
+    "docsify-cli": "^4.4.4",
+    "prettier": "^3.3.2",
     "prettier-stylelint": "0.4.2",
-    "sass": "^1.41.0",
-    "stylelint": "9.7.1",
-    "stylelint-config-standard": "18.2.0",
-    "stylelint-order": "0.8.1",
-    "stylelint-scss": "3.3.2"
+    "sass": "^1.77.6",
+    "stylelint": "^16.6.1",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-order": "^6.0.4",
+    "stylelint-scss": "^6.3.2"
   },
   "peerDepencies": {
-    "sass": "^1.41.0"
+    "sass": "^1.77.6"
   },
   "scripts": {
     "cleanup": "rm -rf node_modules",
     "docs": "docsify serve docs --port=2999",
     "dev": "sass styles.scss -o=dist -r --output-style=compressed",
-    "build": "./.scripts/build.sh",
-    "prepare": ""
+    "build": "./.scripts/build.sh"
   }
 }

@@ -17,12 +17,6 @@
     text-decoration: none;
   }
   */
-  /**
-   * Ce fichier permet de transformer
-   * Les fichiers de variables
-   * Vers des `sass:map` nécessaire à la surcharge
-   * Des mixins du dossier `core`
-   */
   /* ------------------------------------
 
   SOURCE: https://github.com/pierreburel/sass-rem
@@ -109,6 +103,37 @@
   Font Style
 
   ---------------------------- */
+}
+.__docsify-view-source-container :root {
+  --nappr-breakpoints-xs: 320px !default;
+  --nappr-breakpoints-sm: 576px !default;
+  --nappr-breakpoints-md: 768px !default;
+  --nappr-breakpoints-lg: 1024px !default;
+  --nappr-breakpoints-xl: 1248px !default;
+}
+.__docsify-view-source-container :root {
+  --nappr-black: #000000 !default;
+  --nappr-white: #ffffff !default;
+  --nappr-grey: #999999 !default;
+  --nappr-blue: #0000ff !default;
+  --nappr-red: #ff0000 !default;
+  --nappr-green: #00ff00 !default;
+  --nappr-yellow: #f0f00f !default;
+  --nappr-purple: #800080 !default;
+  --nappr-orange: #ffa500 !default;
+  --nappr-warning: #2b2925 !default;
+  --nappr-success: #268744 !default;
+  --nappr-info: #0762c8 !default;
+  --nappr-error: #ff0000 !default;
+  --nappr-g100: #f8f8f8 !default;
+  --nappr-g200: #f0f0f0 !default;
+  --nappr-g300: #e7e7e7 !default;
+  --nappr-g400: #cecece !default;
+  --nappr-g500: #9c9c9c !default;
+  --nappr-g600: #6a6a6a !default;
+  --nappr-g700: #383838 !default;
+  --nappr-g750: #2a2a2a !default;
+  --nappr-g800: #1e1e1e !default;
 }
 .__docsify-view-source-container * {
   box-sizing: border-box;
@@ -303,6 +328,37 @@
   cursor: not-allowed;
   pointer-events: none;
   text-shadow: inherit;
+}
+.__docsify-view-source-container :root {
+  --nappr-black: #000000 !default;
+  --nappr-white: #ffffff !default;
+  --nappr-grey: #999999 !default;
+  --nappr-blue: #0000ff !default;
+  --nappr-red: #ff0000 !default;
+  --nappr-green: #00ff00 !default;
+  --nappr-yellow: #f0f00f !default;
+  --nappr-purple: #800080 !default;
+  --nappr-orange: #ffa500 !default;
+  --nappr-warning: #2b2925 !default;
+  --nappr-success: #268744 !default;
+  --nappr-info: #0762c8 !default;
+  --nappr-error: #ff0000 !default;
+  --nappr-g100: #f8f8f8 !default;
+  --nappr-g200: #f0f0f0 !default;
+  --nappr-g300: #e7e7e7 !default;
+  --nappr-g400: #cecece !default;
+  --nappr-g500: #9c9c9c !default;
+  --nappr-g600: #6a6a6a !default;
+  --nappr-g700: #383838 !default;
+  --nappr-g750: #2a2a2a !default;
+  --nappr-g800: #1e1e1e !default;
+}
+.__docsify-view-source-container :root {
+  --nappr-breakpoints-xs: 320px !default;
+  --nappr-breakpoints-sm: 576px !default;
+  --nappr-breakpoints-md: 768px !default;
+  --nappr-breakpoints-lg: 1024px !default;
+  --nappr-breakpoints-xl: 1248px !default;
 }
 .__docsify-view-source-container .b1 {
   border-width: 1px;
@@ -1494,136 +1550,136 @@
   padding-bottom: 3rem;
 }
 .__docsify-view-source-container .is-black {
-  color: #000000;
+  color: var(--nappr-black);
 }
 .__docsify-view-source-container .bg-black {
-  background-color: #000000;
+  background-color: var(--nappr-black);
 }
 .__docsify-view-source-container .is-white {
-  color: #ffffff;
+  color: var(--nappr-white);
 }
 .__docsify-view-source-container .bg-white {
-  background-color: #ffffff;
+  background-color: var(--nappr-white);
 }
 .__docsify-view-source-container .is-grey {
-  color: #dddddd;
+  color: var(--nappr-grey);
 }
 .__docsify-view-source-container .bg-grey {
-  background-color: #dddddd;
+  background-color: var(--nappr-grey);
 }
 .__docsify-view-source-container .is-blue {
-  color: #0000ff;
+  color: var(--nappr-blue);
 }
 .__docsify-view-source-container .bg-blue {
-  background-color: #0000ff;
+  background-color: var(--nappr-blue);
 }
 .__docsify-view-source-container .is-red {
-  color: #ff0000;
+  color: var(--nappr-red);
 }
 .__docsify-view-source-container .bg-red {
-  background-color: #ff0000;
+  background-color: var(--nappr-red);
 }
 .__docsify-view-source-container .is-green {
-  color: #00ff00;
+  color: var(--nappr-green);
 }
 .__docsify-view-source-container .bg-green {
-  background-color: #00ff00;
+  background-color: var(--nappr-green);
 }
 .__docsify-view-source-container .is-yellow {
-  color: #f0f00f;
+  color: var(--nappr-yellow);
 }
 .__docsify-view-source-container .bg-yellow {
-  background-color: #f0f00f;
+  background-color: var(--nappr-yellow);
 }
 .__docsify-view-source-container .is-purple {
-  color: #800080;
+  color: var(--nappr-purple);
 }
 .__docsify-view-source-container .bg-purple {
-  background-color: #800080;
+  background-color: var(--nappr-purple);
 }
 .__docsify-view-source-container .is-orange {
-  color: #ffa500;
+  color: var(--nappr-orange);
 }
 .__docsify-view-source-container .bg-orange {
-  background-color: #ffa500;
+  background-color: var(--nappr-orange);
 }
 .__docsify-view-source-container .is-warning {
-  color: #ffb344;
+  color: var(--nappr-warning);
 }
 .__docsify-view-source-container .bg-warning {
-  background-color: #ffb344;
+  background-color: var(--nappr-warning);
 }
 .__docsify-view-source-container .is-success {
-  color: #268744;
+  color: var(--nappr-success);
 }
 .__docsify-view-source-container .bg-success {
-  background-color: #268744;
+  background-color: var(--nappr-success);
 }
 .__docsify-view-source-container .is-info {
-  color: #0762c8;
+  color: var(--nappr-info);
 }
 .__docsify-view-source-container .bg-info {
-  background-color: #0762c8;
+  background-color: var(--nappr-info);
 }
 .__docsify-view-source-container .is-error {
-  color: #ff0000;
+  color: var(--nappr-error);
 }
 .__docsify-view-source-container .bg-error {
-  background-color: #ff0000;
+  background-color: var(--nappr-error);
 }
 .__docsify-view-source-container .is-g100 {
-  color: #f8f8f8;
+  color: var(--nappr-g100);
 }
 .__docsify-view-source-container .bg-g100 {
-  background-color: #f8f8f8;
+  background-color: var(--nappr-g100);
 }
 .__docsify-view-source-container .is-g200 {
-  color: #f0f0f0;
+  color: var(--nappr-g200);
 }
 .__docsify-view-source-container .bg-g200 {
-  background-color: #f0f0f0;
+  background-color: var(--nappr-g200);
 }
 .__docsify-view-source-container .is-g300 {
-  color: #e7e7e7;
+  color: var(--nappr-g300);
 }
 .__docsify-view-source-container .bg-g300 {
-  background-color: #e7e7e7;
+  background-color: var(--nappr-g300);
 }
 .__docsify-view-source-container .is-g400 {
-  color: #cecece;
+  color: var(--nappr-g400);
 }
 .__docsify-view-source-container .bg-g400 {
-  background-color: #cecece;
+  background-color: var(--nappr-g400);
 }
 .__docsify-view-source-container .is-g500 {
-  color: #9c9c9c;
+  color: var(--nappr-g500);
 }
 .__docsify-view-source-container .bg-g500 {
-  background-color: #9c9c9c;
+  background-color: var(--nappr-g500);
 }
 .__docsify-view-source-container .is-g600 {
-  color: #6a6a6a;
+  color: var(--nappr-g600);
 }
 .__docsify-view-source-container .bg-g600 {
-  background-color: #6a6a6a;
+  background-color: var(--nappr-g600);
 }
 .__docsify-view-source-container .is-g700 {
-  color: #383838;
+  color: var(--nappr-g700);
 }
 .__docsify-view-source-container .bg-g700 {
-  background-color: #383838;
+  background-color: var(--nappr-g700);
 }
 .__docsify-view-source-container .is-g750 {
-  color: #2a2a2a;
+  color: var(--nappr-g750);
 }
 .__docsify-view-source-container .bg-g750 {
-  background-color: #2a2a2a;
+  background-color: var(--nappr-g750);
 }
 .__docsify-view-source-container .is-g800 {
-  color: #1e1e1e;
+  color: var(--nappr-g800);
 }
 .__docsify-view-source-container .bg-g800 {
-  background-color: #1e1e1e;
+  background-color: var(--nappr-g800);
 }
 .__docsify-view-source-container .is-pastel-blue {
   color: #5db0d7;
@@ -2130,6 +2186,15 @@
 }
 .__docsify-view-source-container .items-end {
   align-items: flex-end;
+}
+.__docsify-view-source-container .self-start {
+  align-self: flex-start;
+}
+.__docsify-view-source-container .self-end {
+  align-self: flex-end;
+}
+.__docsify-view-source-container .self-center {
+  align-self: center;
 }
 .__docsify-view-source-container .clearfix {
   *zoom: 1;

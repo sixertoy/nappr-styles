@@ -1,8 +1,17 @@
-$breakpoints-xs: 320px !default; // Mobile Small
-$breakpoints-sm: 576px !default; // Mobile
-$breakpoints-md: 768px !default; // Tablet
-$breakpoints-lg: 1024px !default; // Desktop
-$breakpoints-xl: 1248px !default; // Desktop Extra Large
+:root {
+  // Breakpoints
+  --nappr-breakpoints-xs: 320px !default; // Mobile Small
+  --nappr-breakpoints-sm: 576px !default; // Mobile
+  --nappr-breakpoints-md: 768px !default; // Tablet
+  --nappr-breakpoints-lg: 1024px !default; // Desktop
+  --nappr-breakpoints-xl: 1248px !default; // Desktop Extra Large
+}
+
+$breakpoints-xs: var(--nappr-breakpoints-xs);
+$breakpoints-sm: var(--nappr-breakpoints-sm);
+$breakpoints-md: var(--nappr-breakpoints-md);
+$breakpoints-lg: var(--nappr-breakpoints-lg);
+$breakpoints-xl: var(--nappr-breakpoints-xl);
 
 $breakpoint-mobile-sm: $breakpoints-xs;
 $breakpoint-mobile: $breakpoints-sm;

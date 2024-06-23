@@ -5,11 +5,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: #ffffff;
+  background-color: var(--nappr-white);
 }
 
 ::-webkit-scrollbar-track-piece {
-  background-color: #ffffff;
+  background-color: var(--nappr-white);
 }
 
 ::-webkit-scrollbar-corner {
@@ -19,9 +19,8 @@
 ::-webkit-scrollbar-thumb {
   background-color: rgba(0, 0, 0, 0.2);
   background-color: #adadad;
-  border: solid #ffffff;
-  -webkit-box-shadow:
-    inset 1px 1px 0 rgba(0, 0, 0, 0.1),
+  border: solid var(--nappr-white);
+  -webkit-box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.07);
 }
 

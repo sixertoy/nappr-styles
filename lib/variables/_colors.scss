@@ -1,28 +1,63 @@
-$black: #000000 !default;
-$white: #ffffff !default;
-$grey: #dddddd !default;
+:root {
+  // Black & White Colors
+  --nappr-black: #000000 !default;
+  --nappr-white: #ffffff !default;
+  --nappr-grey: #999999 !default;
 
-$blue: #0000ff !default;
-$red: #ff0000 !default;
-$green: #00ff00 !default;
-$yellow: #f0f00f !default;
-$purple: #800080 !default;
-$orange: #ffa500 !default;
+  // Primary colors
+  --nappr-blue: #0000ff !default;
+  --nappr-red: #ff0000 !default;
+  --nappr-green: #00ff00 !default;
+  --nappr-yellow: #f0f00f !default;
+  --nappr-purple: #800080 !default;
+  --nappr-orange: #ffa500 !default;
 
-$warning: #ffb344 !default;
-$success: #268744 !default;
-$info: #0762c8 !default;
-$error: #ff0000 !default;
+  // Usual colors
+  --nappr-warning: #2b2925 !default;
+  --nappr-success: #268744 !default;
+  --nappr-info: #0762c8 !default;
+  --nappr-error: #ff0000 !default;
 
-$g100: #f8f8f8;
-$g200: #f0f0f0;
-$g300: #e7e7e7;
-$g400: #cecece;
-$g500: #9c9c9c;
-$g600: #6a6a6a;
-$g700: #383838;
-$g750: #2a2a2a;
-$g800: #1e1e1e;
+  // Greys Colors
+  --nappr-g100: #f8f8f8 !default;
+  --nappr-g200: #f0f0f0 !default;
+  --nappr-g300: #e7e7e7 !default;
+  --nappr-g400: #cecece !default;
+  --nappr-g500: #9c9c9c !default;
+  --nappr-g600: #6a6a6a !default;
+  --nappr-g700: #383838 !default;
+  --nappr-g750: #2a2a2a !default;
+  --nappr-g800: #1e1e1e !default;
+}
+
+// Black & White Colors
+$black: var(--nappr-black) !default;
+$white: var(--nappr-white) !default;
+$grey: var(--nappr-grey) !default;
+
+// Primary colors
+$blue: var(--nappr-blue) !default;
+$red: var(--nappr-red) !default;
+$green: var(--nappr-green) !default;
+$yellow: var(--nappr-yellow) !default;
+$purple: var(--nappr-purple) !default;
+$orange: var(--nappr-orange) !default;
+
+// Usual colors
+$warning: var(--nappr-warning) !default;
+$success: var(--nappr-success) !default;
+$info: var(--nappr-info) !default;
+$error: var(--nappr-error) !default;
+
+$g100: var(--nappr-g100);
+$g200: var(--nappr-g200);
+$g300: var(--nappr-g300);
+$g400: var(--nappr-g400);
+$g500: var(--nappr-g500);
+$g600: var(--nappr-g600);
+$g700: var(--nappr-g700);
+$g750: var(--nappr-g750);
+$g800: var(--nappr-g800);
 
 $pastel-blue: #5db0d7 !default;
 $pastel-yellow: #f9da9b !default;

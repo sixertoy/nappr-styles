@@ -1,6 +1,6 @@
 table {
   @include rem(font-size, 12px);
-  // table-layout: fixed;
+
   border-collapse: collapse;
   border-spacing: 0;
   max-width: 100%;
