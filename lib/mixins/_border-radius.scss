@@ -1,10 +1,11 @@
 @use '../funcs/rem' as rem;
 @use "../variables/defaults" as defaults;
+@use '../funcs/math' as math;
 
 @each $size in defaults.$BORDER_RADIUS_MAP {
   $sides: (all, top, left, right, bottom);
 
-  $pixelValue: number-to-pixel($size);
+  $pixelValue: math.number-to-pixel($size);
 
   @each $side in $sides {
     @if $side == 'all' {

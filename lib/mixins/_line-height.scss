@@ -1,4 +1,5 @@
 @use '../variables/defaults' as defaults;
+@use '../funcs/math' as math;
 
 /**
 * USAGE:
@@ -7,14 +8,12 @@
 * .ln12 -> line-height 12px converted to rem
 */
 @mixin lineHeight($value) {
-  $pixelValue: number-to-pixel($value);
+  $pixelValue: math.number-to-pixel($value);
   line-height: $pixelValue;
 }
 
 @each $size in defaults.$LINE_HEIGHT_MAP {
-  $pixelValue: number-to-pixel($size);
-
   .lh#{$size} {
-    @include lineHeight($pixelValue);
+    @include lineHeight($size);
   }
 }

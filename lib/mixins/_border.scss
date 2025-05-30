@@ -1,12 +1,13 @@
 @use "sass:string";
 @use '../funcs/rem' as rem;
+@use '../funcs/math' as math;
 @use '../variables/defaults' as defaults;
 
 @each $size in defaults.$BORDER_SIZE_MAP {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
 
   // convert value to SASS variables with unit
-  $pixelValue: number-to-pixel($size);
+  $pixelValue: math.number-to-pixel($size);
 
   @each $side in $sides {
     @if $side == 'all' {

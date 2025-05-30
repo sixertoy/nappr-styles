@@ -1,6 +1,7 @@
 @use "sass:string";
 @use '../funcs/rem' as rem;
 @use '../variables/defaults' as defaults;
+@use '../funcs/math' as math;
 
 /**
 * USAGE:
@@ -14,7 +15,7 @@
   $sides: (all, topbottom, leftright, top, left, right, bottom);
 
   // convert value to SASS variables with unit
-  $nbx: number-to-pixel($size);
+  $nbx: math.number-to-pixel($size);
   $pixelValue: rem.convert($nbx);
 
   @each $side in $sides {

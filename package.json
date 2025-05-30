@@ -29,7 +29,7 @@
   "scripts": {
     "cleanup": "rm -rf node_modules",
     "docs": "docsify serve docs --port=2999",
-    "dev": "sass --load-path=node_modules --style=compressed styles.scss",
+    "dev": "sass --load-path=node_modules styles.scss",
     "build": "./.scripts/build.sh"
   }
 }

@@ -1,11 +1,1 @@
-.docs-palette {
-  align-items: center;
-  border: 1px solid #cccccc;
-  display: flex;
-  flex: 1;
-  height: 70px;
-  justify-content: center;
-  text-align: center;
-}
-
-/*# sourceMappingURL=docs.theme.css.map */
+.docs-palette{align-items:center;border:1px solid #ccc;display:flex;flex:1;height:70px;justify-content:center;text-align:center}/*# sourceMappingURL=docs.theme.css.map */
