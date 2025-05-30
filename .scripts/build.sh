@@ -11,7 +11,7 @@ then
   rm $OUTPUT_FILE
 fi
 
-$(yarn bin)/sass $INPUT_FILE $OUTPUT_FILE
+yarn sass --load-path=node_modules $INPUT_FILE $OUTPUT_FILE
 
 INPUT_FILE=./docs.theme.scss
 OUTPUT_FILE=./docs/docs.theme.css
@@ -21,6 +21,6 @@ then
   rm $OUTPUT_FILE
 fi
 
-$(yarn bin)/sass $INPUT_FILE $OUTPUT_FILE
+yarn sass --load-path=node_modules $INPUT_FILE $OUTPUT_FILE
 
 exit 0

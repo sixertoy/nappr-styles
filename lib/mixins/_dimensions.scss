@@ -1,3 +1,6 @@
+@use '../funcs/rem' as rem;
+@use '../variables/defaults' as defaults;
+
 /**
 * USAGE:
 * ---------------------
@@ -5,15 +8,15 @@
 * .w33 -> width 33%
 */
 @mixin withHeight($size) {
-  height: rem($size);
-  max-height: rem($size);
-  min-height: rem($size);
+  height: rem.convert($size);
+  max-height: rem.convert($size);
+  min-height: rem.convert($size);
 }
 
 @mixin withWidth($size) {
-  max-width: rem($size);
-  min-width: rem($size);
-  width: rem($size);
+  max-width: rem.convert($size);
+  min-width: rem.convert($size);
+  width: rem.convert($size);
 }
 
 @mixin withSize($width, $height: null) {
@@ -32,7 +35,7 @@
   @include withSize($size);
 }
 
-@each $size in $dimensions-map {
+@each $size in defaults.$DIMENSIONS_MAP {
   $percentValue: ($size * 1%);
 
   .w#{$size} {

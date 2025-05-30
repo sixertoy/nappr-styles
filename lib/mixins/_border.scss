@@ -1,4 +1,8 @@
-@each $size in $border-size-map {
+@use "sass:string";
+@use '../funcs/rem' as rem;
+@use '../variables/defaults' as defaults;
+
+@each $size in defaults.$BORDER_SIZE_MAP {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
 
   // convert value to SASS variables with unit
@@ -7,36 +11,36 @@
   @each $side in $sides {
     @if $side == 'all' {
       .b#{$size} {
-        @include rem(border-width, $pixelValue);
-
-        border-style: $border-style;
+        $value : rem.convert($pixelValue);
+        border-width: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else if $side == 'topbottom' {
       .by#{$size} {
-        @include rem(border-top-width, $pixelValue);
-        @include rem(border-bottom-width, $pixelValue);
-
-        border-style: $border-style;
+        $value : rem.convert($pixelValue);
+        border-top-width: $value;
+        border-bottom-width: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else if $side == 'leftright' {
       .bx#{$size} {
-        @include rem(border-left-width, $pixelValue);
-        @include rem(border-right-width, $pixelValue);
-
-        border-style: $border-style;
+        $value : rem.convert($pixelValue);
+        border-left-width: $value;
+        border-right-width: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else {
       // .bl, .br, .bt, .bb
-      .b#{str-slice($side, 0, 1)}#{$size} {
-        @include rem(border-#{$side}-width, $pixelValue);
-
-        border-style: $border-style;
+      .b#{string.slice($side, 0, 1)}#{$size} {
+        $value : rem.convert($pixelValue);
+        border-#{$side}-width: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
   }

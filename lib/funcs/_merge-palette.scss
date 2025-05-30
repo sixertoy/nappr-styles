@@ -1,6 +1,8 @@
+@use '../globals' as globals;
+
 @function merge-palettes($palettes...) {
   // hack immutable default palette
-  $merged: map-merge((), $PALETTE);
+  $merged: map-merge((), globals.$PALETTE);
 
   @each $palette in $palettes {
     $merged: map-merge($merged, $palette);

@@ -1,16 +1,18 @@
+@use '../globals' as globals;
+
 @mixin color($name) {
-  color: get-color($PALETTE, $name);
+  color: get-color(globals.$PALETTE, $name);
 }
 
 @mixin backgroundColor($name) {
-  background-color: get-color($PALETTE, $name);
+  background-color: get-color(globals.$PALETTE, $name);
 }
 
 // Generate helpers classes for colors
 // From auto generated file `_colors.scss`
 // .is-<color> { /* setup font-color */ }
 // .bg-<color> { /* setup background-color */ }
-@each $name, $value in $PALETTE {
+@each $name, $value in globals.$PALETTE {
   // generate font colors
   .is-#{$name} {
     color: $value;

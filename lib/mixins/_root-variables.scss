@@ -1,9 +1,11 @@
+@use '../globals' as globals;
+
 :root {
-  @each $name, $value in $PALETTE {
+  @each $name, $value in globals.$PALETTE {
     --nappr-#{$name}: #{$value};
   }
 
-  @each $name, $value in $BREAKPOINTS {
+  @each $name, $value in globals.$BREAKPOINTS {
     --nappr-#{$name}: #{$value};
   }
 }

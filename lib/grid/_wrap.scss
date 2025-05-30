@@ -1,3 +1,6 @@
+@use '../funcs/rem' as rem;
+@use '../helpers/flexbox';
+
 .wrap-1,
 .wrap-2,
 .wrap-3,
@@ -11,8 +14,7 @@
 .wrap-3 > *,
 .wrap-4 > *,
 .wrap-5 > * {
-  @include rem(margin-bottom, 12px);
-
+  margin-bottom: rem.convert(12px);
   flex: 0 0 auto;
 }
 

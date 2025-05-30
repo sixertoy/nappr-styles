@@ -1,4 +1,7 @@
-@each $size in $border-radius-map {
+@use '../funcs/rem' as rem;
+@use "../variables/defaults" as defaults;
+
+@each $size in defaults.$BORDER_RADIUS_MAP {
   $sides: (all, top, left, right, bottom);
 
   $pixelValue: number-to-pixel($size);
@@ -8,47 +11,49 @@
       // all border radius
       .rad#{$size},
       .brad#{$size} {
-        @include rem(border-radius, $pixelValue);
+        $value: rem.convert($pixelValue);
+        border-radius: $value;
       }
     }
 
     @else if $side == 'top' {
       .radt#{$size},
       .bradt#{$size} {
-        @include rem(border-top-left-radius, $pixelValue);
-        @include rem(border-top-right-radius, $pixelValue);
-
-        border-style: $border-style;
+        $value: rem.convert($pixelValue);
+        border-top-left-radius: $value;
+        border-top-right-radius: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else if $side == 'bottom' {
       .radb#{$size},
       .bradb#{$size} {
-        @include rem(border-bottom-right-radius, $pixelValue);
-        @include rem(border-bottom-left-radius, $pixelValue);
-
-        border-style: $border-style;
+        $value: rem.convert($pixelValue);
+        border-bottom-right-radius: $value;
+        border-bottom-left-radius: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else if $side == 'right' {
       .radt#{$size},
       .bradt#{$size} {
-        @include rem(border-top-right-radius, $pixelValue);
-        @include rem(border-bottom-right-radius, $pixelValue);
-
-        border-style: $border-style;
+        $value: rem.convert($pixelValue);
+        border-top-right-radius: $value;
+        border-bottom-right-radius: $value;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
 
     @else if $side == 'left' {
       .radl#{$size},
       .bradl#{$size} {
-        @include rem(border-top-left-radius, $pixelValue);
-        @include rem(border-bottom-left-radius, $pixelValue);
+        $value: rem.convert($pixelValue);
+        border-top-left-radius: $value;
+        border-bottom-left-radius: $value;
 
-        border-style: $border-style;
+        border-style: defaults.$BORDER_STYLE;
       }
     }
   }

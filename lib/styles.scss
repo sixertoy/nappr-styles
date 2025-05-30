@@ -3,16 +3,16 @@
  * !!! DO NOT REORDER -> Declarative loading
  *
  */
-@import 'variables/';
-@import 'globals';
-@import 'funcs/';
+@use 'variables/' as *;
+@use 'globals';
+@use 'funcs/' as *;
 
 // Core
-@import 'mixins/';
-@import 'reset';
-@import 'htmls/';
-@import 'helpers/';
-@import 'grid/';
+@use 'mixins/' as *;
+@use 'reset';
+@use 'htmls/' as *;
+@use 'grid/' as *;
+@use 'helpers/' as *;
 
 .debug * {
   outline: 1px solid rgb(255 0 0 / 30%);

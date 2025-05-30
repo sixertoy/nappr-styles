@@ -1,7 +1,9 @@
+// @use './styles.scss' as base;
+
 .__docsify-view-source-container {
   // applique la librairie de styles
   // aux exemples de la documentation
-  @import './styles.scss';
+  // @extend base
 }
 
 .docs-palette {

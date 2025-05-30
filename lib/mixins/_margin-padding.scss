@@ -1,3 +1,7 @@
+@use "sass:string";
+@use '../funcs/rem' as rem;
+@use '../variables/defaults' as defaults;
+
 /**
 * USAGE:
 * ---------------------
@@ -6,54 +10,55 @@
 * .mx12 -> margin right-left 12px converted to rem
 * .pr12 -> padding right 12px converted to rem
 */
-@each $size in $spacings-map {
+@each $size in defaults.$SPACINGS_MAP {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
 
   // convert value to SASS variables with unit
-  $pixelValue: number-to-pixel($size);
+  $nbx: number-to-pixel($size);
+  $pixelValue: rem.convert($nbx);
 
   @each $side in $sides {
     @if $side == 'all' {
       .m#{$size} {
-        @include rem(margin, $pixelValue);
+        margin: $pixelValue;
       }
 
       .p#{$size} {
-        @include rem(padding, $pixelValue);
+        padding: $pixelValue;
       }
     }
 
     @else if $side == 'topbottom' {
       .my#{$size} {
-        @include rem(margin-top, $pixelValue);
-        @include rem(margin-bottom, $pixelValue);
+        margin-top: $pixelValue;
+        margin-bottom: $pixelValue;
       }
 
       .py#{$size} {
-        @include rem(padding-top, $pixelValue);
-        @include rem(padding-bottom, $pixelValue);
+        padding-top: $pixelValue;
+        padding-bottom: $pixelValue;
       }
     }
 
     @else if $side == 'leftright' {
       .mx#{$size} {
-        @include rem(margin-left, $pixelValue);
-        @include rem(margin-right, $pixelValue);
+        margin-left: $pixelValue;
+        margin-right: $pixelValue;
       }
 
       .px#{$size} {
-        @include rem(padding-left, $pixelValue);
-        @include rem(padding-right, $pixelValue);
+        padding-left: $pixelValue;
+        padding-right: $pixelValue;
       }
     }
 
     @else {
-      .m#{str-slice($side, 0, 1)}#{$size} {
-        @include rem(margin-#{$side}, $pixelValue);
+      .m#{string.slice($side, 0, 1)}#{$size} {
+        margin-#{$side}: $pixelValue;
       }
 
-      .p#{str-slice($side, 0, 1)}#{$size} {
-        @include rem(padding-#{$side}, $pixelValue);
+      .p#{string.slice($side, 0, 1)}#{$size} {
+        padding-#{$side}: $pixelValue;
       }
     }
   }

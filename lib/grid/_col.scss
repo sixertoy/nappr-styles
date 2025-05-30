@@ -1,3 +1,6 @@
+@use '../mixins/dimensions' as dimensions;
+@use '../helpers/flexbox';
+
 .columns {
   @extend .flex-columns;
 }
@@ -20,7 +23,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-80,
@@ -29,7 +32,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-75,
@@ -38,7 +41,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-66,
@@ -47,7 +50,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-60,
@@ -56,7 +59,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-50,
@@ -66,7 +69,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-40,
@@ -75,7 +78,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-33,
@@ -84,7 +87,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-25,
@@ -93,7 +96,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-20,
@@ -102,7 +105,7 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }
 
 .columns .col-0 {
@@ -110,5 +113,5 @@
 
   @extend .flex-1;
 
-  @include withWidth($size);
+  @include dimensions.withWidth($size);
 }

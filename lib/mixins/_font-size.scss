@@ -1,14 +1,18 @@
+@use '../funcs/rem' as rem;
+@use '../variables/defaults' as defaults;
+
 /**
 * USAGE:
 * ---------------------
 *
 * .fs12 -> font-size 12px converted to rem
 */
-@mixin fontSize($value) {
-  @include rem(font-size, $value);
+@mixin fontSize($pixelValue) {
+  $value: rem.convert($pixelValue);
+  font-size: $value;
 }
 
-@each $size in $font-sizes-map {
+@each $size in defaults.$FONT_SIZES_MAP {
   $pixelValue: number-to-pixel($size);
 
   .fs#{$size} {

@@ -22,8 +22,7 @@ Alignments
 
 .text-overflow,
 .text-ellipsis {
-  @extend .no-wrap;
-
+  white-space: nowrap;
   text-overflow: ellipsis;
 }
 

@@ -1,3 +1,6 @@
+@use '../mixins/dimensions' as dimensions;
+@use '../helpers/flexbox';
+
 .rows {
   @extend .flex-rows;
 }
@@ -20,7 +23,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-80,
@@ -29,7 +32,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-75,
@@ -38,7 +41,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-66,
@@ -47,7 +50,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-60,
@@ -56,7 +59,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-50,
@@ -66,7 +69,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-40,
@@ -75,7 +78,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-33,
@@ -84,7 +87,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-25,
@@ -93,7 +96,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-20,
@@ -102,7 +105,7 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
 
 .rows .row-0 {
@@ -110,5 +113,5 @@
 
   @extend .flex-1;
 
-  @include withHeight($size);
+  @include dimensions.withHeight($size);
 }
