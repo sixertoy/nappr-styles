@@ -1,13 +1,17 @@
-/**
- * Ce fichier permet de transformer
- * Les fichiers de variables
- * Vers des `sass:map` nécessaire à la surcharge
- * Des mixins du dossier `core`
- */
-@use "sass:meta";
-@use "variables/colors";
-@use "variables/breakpoints";
+// Sass built-in modules
+@use 'sass:meta';
 
+// Local modules
+@use 'variables/colors';
+@use 'variables/breakpoints';
+
+// Sass built-in modules
+// Local modules
+
+/**
+ * Ce fichier permet de transformer les fichiers de variables
+ * Vers des `sass:map` nécessaire à la surcharge des mixins du dossier `core`
+ */
 // stylelint-disable-next-line
 // @debug meta.module-variables('colors');
 // @debug meta.module-variables('breakpoints');

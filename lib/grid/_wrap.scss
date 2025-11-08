@@ -14,8 +14,8 @@
 .wrap-3 > *,
 .wrap-4 > *,
 .wrap-5 > * {
-  margin-bottom: rem.convert(12px);
   flex: 0 0 auto;
+  margin-bottom: rem.convert(12px);
 }
 
 .wrap-1 > * {
@@ -27,7 +27,7 @@
 }
 
 .wrap-3 > * {
-  width: 33.333333%;
+  width: 33.3333%;
 }
 
 .wrap-4 > * {

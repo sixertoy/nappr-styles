@@ -12,10 +12,18 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
   flex-direction: row;
 }
 
+.flex-columns-reverse {
+  flex-direction: column-reverse;
+}
+
 .flex-rows {
   display: flex;
   flex: 1;
   flex-direction: column;
+}
+
+.flex-rows-reverse {
+  flex-direction: row-reverse;
 }
 
 .flex-wrap {
@@ -29,8 +37,7 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 .flex-wrapper {
   display: flex;
   flex: 1;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-flow: row wrap;
   justify-content: space-between;
 }
 
@@ -65,9 +72,7 @@ $flexSpaceSizes: (0, 1, 2, 3, 4, 5, 6, 7, 8);
 }
 
 .flex-justify > * {
-  flex-basis: auto;
-  flex-grow: 1;
-  flex-shrink: 1;
+  flex: 1 1 auto;
 }
 
 .flex-stretch {

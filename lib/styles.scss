@@ -1,19 +1,18 @@
-/**
- *
- * !!! DO NOT REORDER -> Declarative loading
- *
- */
 @use 'variables/' as *;
 @use 'globals';
 @use 'funcs/' as *;
-
-// Core
 @use 'mixins/' as *;
 @use 'reset';
 @use 'htmls/' as *;
 @use 'grid/' as *;
 @use 'helpers/' as *;
 
+/**
+ *
+ * !!! DO NOT REORDER -> Declarative loading
+ *
+ */
+// Core
 .debug * {
   outline: 1px solid rgb(255 0 0 / 30%);
 }

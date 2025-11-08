@@ -1,3 +1,7 @@
+// Sass built-in modules
+@use 'sass:map';
+
+// Sass built-in modules
 @function get-color($palette, $name) {
-  @return map-get($palette, $name);
+  @return map.get($palette, $name);
 }

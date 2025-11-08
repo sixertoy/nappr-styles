@@ -128,7 +128,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1;
-  width: defaults.$body-width;
+  width: defaults.$BODY_WIDTH;
 }
 
 hr,
@@ -150,7 +150,7 @@ li {
 
 ol + ol,
 li + li {
-  margin-top: defaults.$default-spacing;
+  margin-top: defaults.$DEFAULT_SPACING;
 }
 
 blockquote,
@@ -172,8 +172,8 @@ button {
 }
 
 pre {
+  overflow-wrap: break-word;
   white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 p {

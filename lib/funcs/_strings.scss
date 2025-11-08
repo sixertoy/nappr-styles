@@ -1,15 +1,20 @@
-@use "sass:string";
+// Sass built-in modules
+@use 'sass:string';
+@use 'sass:list';
 
+// Sass built-in modules
 @function contain($list, $value) {
-  @return not not index($list, $value);
+  @return not not list.index($list, $value);
 }
 
 @function capitalize($string) {
-  @return to-upper-case(string.slice($string, 1, 1)) + string.slice($string, 2);
+  @return string.to-upper-case(string.slice($string, 1, 1)) +
+    string.slice($string, 2);
 }
 
 @function uncapitalize($string) {
-  @return to-lower-case(string.slice($string, 1, 1)) + string.slice($string, 2);
+  @return string.to-lower-case(string.slice($string, 1, 1)) +
+    string.slice($string, 2);
 }
 
 @function camelize($string) {
@@ -17,15 +22,13 @@
   $result: '';
   $exclude: ' ', '-', '–', '—', '_', ',', ';', ':', '.';
 
-  @while str-length($progress) > 0 {
+  @while string.length($progress) > 0 {
     $char: string.slice($progress, 1, 1);
 
     @if contain($exclude, $char) {
       $progress: capitalize(string.slice($progress, 2, 2)) +
         string.slice($progress, 3);
-    }
-
-    @else {
+    } @else {
       $result: $result + $char;
       $progress: string.slice($progress, 2);
     }

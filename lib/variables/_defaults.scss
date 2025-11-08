@@ -1,53 +1,40 @@
+@use '../funcs/lists' as lists;
+
+// --- Configuration ---
 $BORDER_STYLE: solid !default;
 $LINE_HEIGHT_MAP: (12) !default;
 $BODY_FONT_SIZE: 16px !default;
-$SPACINGS_MAP: (3, 6, 9, 12, 18, 24, 26, 48) !default;
-$BORDER_SIZE_MAP: (1, 2, 3, 4, 5, 6, 7, 8, 10) !default;
-$BORDER_RADIUS_MAP: (2, 3, 4, 5, 6, 7, 8, 10, 12, 24) !default;
-$FONT_SIZES_MAP: (6, 7, 8, 9, 10, 11, 12, 14, 24, 26, 32, 40) !default;
-$DIMENSIONS_MAP: (
+$BODY_WIDTH: 100vw !default;
+$DEFAULT_SPACING: 12px !default;
+
+// --- Spacings ---
+$SPACINGS_V: lists.generate-numbers-list(4, 64) !default;
+$SPACINGS_W: lists.generate-numbers-list(8, 128) !default;
+$SPACINGS_MAP: (
   3,
-  5,
   6,
-  10,
-  15,
-  20,
-  25,
-  30,
-  33,
-  35,
-  40,
-  45,
-  50,
-  55,
-  60,
-  66,
-  70,
-  75,
+  9,
+  12,
+  18,
+  24,
+  26,
+  48,
+  56,
+  64,
+  72,
   80,
-  85,
-  90,
-  95,
-  100
+  88,
+  96,
+  100,
+  120
 ) !default;
 
-$body-width: 100vw !default;
-$rem-fallback: true !default; // always force callback
-$rem-px-only: false !default;
+// --- Fonts ---
+$FONT_SIZES_MAP: (6, 7, 8, 9, 10, 11, 12, 14, 24, 26, 32, 40) !default;
 
-// Borders
-$border-style: $BORDER_STYLE;
-$border-size-map: $BORDER_SIZE_MAP;
-$border-radius-map: $BORDER_RADIUS_MAP;
+// --- Dimensions ---
+$DIMENSIONS_MAP: lists.generate-numbers-list(5, 100) !default;
 
-// Fonts
-$body-font-size: $BODY_FONT_SIZE;
-$default-font-size: 12px !default;
-$line-height-map: $LINE_HEIGHT_MAP;
-$font-sizes-map: $FONT_SIZES_MAP;
-$rem-baseline: $body-font-size !default;
-
-// Dimensions
-$default-spacing: 12px !default;
-$spacings-map: $SPACINGS_MAP;
-$dimensions-map: $DIMENSIONS_MAP;
+// --- Borders ---
+$BORDER_SIZE_MAP: lists.generate-numbers-list(1, 20) !default;
+$BORDER_RADIUS_MAP: lists.generate-numbers-list(1, 24) !default;

@@ -1,0 +1,24 @@
+// Sass built-in modules
+@use 'sass:list';
+@use 'sass:math';
+
+// Sass built-in modules
+
+/**
+ * Génère une liste de nombres multiples d'un pas donné, jusqu'à une valeur max.
+ * @param {number} $step - Le pas de multiplication (4 ou 8).
+ * @param {number} $max-value - La valeur maximale à atteindre (ex: 64).
+ * @return {list} Une liste de nombres.
+ */
+@function generate-numbers-list($step, $maxValue) {
+  $list: 0; // On commence toujours avec 0
+
+  // On boucle tant que le multiple n'a pas dépassé la valeur maximale
+  // On divise la max-value par le pas pour déterminer le nombre d'itérations
+  @for $i from 1 through math.floor(math.div($maxValue, $step)) {
+    $value: $i * $step;
+    $list: list.append($list, $value);
+  }
+
+  @return $list;
+}

@@ -1,5 +1,3 @@
-@use '../htmls/form';
-
 /* -------------------------------------------------
 
  NEGATES
@@ -111,6 +109,11 @@
 
 .no-no-select {
   user-select: none !important;
+}
+
+.no-click,
+.not-allowed {
+  cursor: not-allowed;
 }
 
 .no-underline,

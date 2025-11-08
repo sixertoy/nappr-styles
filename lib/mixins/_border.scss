@@ -1,8 +1,13 @@
-@use "sass:string";
+// Sass built-in modules
+@use 'sass:string';
+
+// Local modules
 @use '../funcs/rem' as rem;
 @use '../funcs/math' as math;
 @use '../variables/defaults' as defaults;
 
+// Sass built-in modules
+// Local modules
 @each $size in defaults.$BORDER_SIZE_MAP {
   $sides: (all, topbottom, leftright, top, left, right, bottom);
 
@@ -12,34 +17,32 @@
   @each $side in $sides {
     @if $side == 'all' {
       .b#{$size} {
-        $value : rem.convert($pixelValue);
-        border-width: $value;
-        border-style: defaults.$BORDER_STYLE;
-      }
-    }
+        $value: rem.convert($pixelValue);
 
-    @else if $side == 'topbottom' {
+        border-style: defaults.$BORDER_STYLE;
+        border-width: $value;
+      }
+    } @else if $side == 'topbottom' {
       .by#{$size} {
-        $value : rem.convert($pixelValue);
-        border-top-width: $value;
+        $value: rem.convert($pixelValue);
+
         border-bottom-width: $value;
         border-style: defaults.$BORDER_STYLE;
+        border-top-width: $value;
       }
-    }
-
-    @else if $side == 'leftright' {
+    } @else if $side == 'leftright' {
       .bx#{$size} {
-        $value : rem.convert($pixelValue);
+        $value: rem.convert($pixelValue);
+
         border-left-width: $value;
         border-right-width: $value;
         border-style: defaults.$BORDER_STYLE;
       }
-    }
-
-    @else {
+    } @else {
       // .bl, .br, .bt, .bb
       .b#{string.slice($side, 0, 1)}#{$size} {
-        $value : rem.convert($pixelValue);
+        $value: rem.convert($pixelValue);
+
         border-#{$side}-width: $value;
         border-style: defaults.$BORDER_STYLE;
       }
