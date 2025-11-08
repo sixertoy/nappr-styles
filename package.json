@@ -4,10 +4,27 @@
   "description": "A collection of SCSS helpers",
   "main": "./styles.scss",
   "browser": "./dist/styles.css",
+  "style": "./dist/styles.css",
+  "sass": "./styles.scss",
   "homepage": "https://sixertoy.github.io/nappr-styles",
-  "repository": "https://github.com/sixertoy/nappr-styles",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sixertoy/nappr-styles.git"
+  },
   "author": "sixertoy <sixertoy.github@gmail.com>",
   "license": "ISC",
+  "keywords": [
+    "scss",
+    "sass",
+    "css",
+    "styles",
+    "helpers",
+    "utilities",
+    "nappr"
+  ],
+  "engines": {
+    "node": ">=14.0.0"
+  },
   "files": [
     "lib",
     "dist",
@@ -18,18 +35,32 @@
   "devDependencies": {
     "docsify": "^4.13.1",
     "docsify-cli": "^4.4.4",
-    "prettier": "^3.3.2",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.6.2",
     "prettier-stylelint": "0.4.2",
-    "sass": "^1.77.6",
-    "stylelint": "^16.6.1",
-    "stylelint-config-standard": "^38.0.0",
+    "sass": "^1.93.3",
+    "stylelint": "^16.25.0",
+    "stylelint-config-standard": "^39.0.1",
+    "stylelint-config-standard-scss": "^16.0.0",
     "stylelint-order": "^7.0.0",
-    "stylelint-scss": "^6.3.2"
+    "stylelint-scss": "^6.12.1"
   },
   "scripts": {
-    "cleanup": "rm -rf node_modules",
+    "cleanup": "rm -rf node_modules dist",
     "docs": "docsify serve docs --port=2999",
-    "dev": "sass --load-path=node_modules styles.scss",
-    "build": "./.scripts/build.sh"
+    "dev": "sass --load-path=node_modules --load-path=../node_modules --watch styles.scss:dist/styles.css",
+    "dev:expanded": "sass --load-path=node_modules --load-path=../node_modules --style=expanded --source-map styles.scss:dist/styles.css",
+    "build": "./.scripts/build.sh",
+    "build:dev": "sass --load-path=node_modules --load-path=../node_modules --style=expanded --source-map styles.scss dist/styles.css && sass --load-path=node_modules --load-path=../node_modules --style=expanded --source-map docs.theme.scss docs/docs.theme.css",
+    "lint": "stylelint \"**/*.scss\" --ignore-path .gitignore",
+    "lint:fix": "stylelint \"**/*.scss\" --ignore-path .gitignore --fix",
+    "format": "node .scripts/format-imports.js && prettier --write \"**/*.{scss,json,md}\" --ignore-path .gitignore",
+    "format:imports": "node .scripts/format-imports.js",
+    "format:check": "prettier --check \"**/*.{scss,json,md}\" --ignore-path .gitignore",
+    "prepublishOnly": "yarn build",
+    "validate": "yarn lint && yarn format:check"
+  },
+  "dependencies": {
+    "sass-rem": "^4.0.0"
   }
 }

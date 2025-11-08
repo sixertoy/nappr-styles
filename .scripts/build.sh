@@ -1,26 +1,43 @@
 #!/bin/bash
 
+set -e
+
 INPUT_FILE=./styles.scss
 OUTPUT_FILE=./dist/styles.css
 VERSION=$(node -p "require('./package.json').version")
 
-echo -e "\033[32mBuilding SASS files\033[m"
+echo -e "\033[32mBuilding SASS files (v${VERSION})\033[m"
 
-if [ -f $OUTPUT_FILE ];
-then
-  rm $OUTPUT_FILE
-fi
+# Créer le dossier dist s'il n'existe pas
+mkdir -p dist
 
-yarn sass --load-path=node_modules --style=compressed $INPUT_FILE $OUTPUT_FILE
+# Nettoyer les anciens fichiers
+[ -f $OUTPUT_FILE ] && rm $OUTPUT_FILE
+[ -f ${OUTPUT_FILE}.map ] && rm ${OUTPUT_FILE}.map
 
-INPUT_FILE=./docs.theme.scss
-OUTPUT_FILE=./docs/docs.theme.css
+# Compiler le fichier principal avec sourcemap
+yarn sass \
+  --load-path=node_modules \
+  --load-path=../node_modules \
+  --style=compressed \
+  --source-map \
+  --embed-sources \
+  $INPUT_FILE $OUTPUT_FILE
 
-if [ -f $OUTPUT_FILE ];
-then
-  rm $OUTPUT_FILE
-fi
+# Compiler le thème de documentation
+DOCS_INPUT=./docs.theme.scss
+DOCS_OUTPUT=./docs/docs.theme.css
 
-yarn sass --load-path=node_modules --style=compressed $INPUT_FILE $OUTPUT_FILE
+[ -f $DOCS_OUTPUT ] && rm $DOCS_OUTPUT
+[ -f ${DOCS_OUTPUT}.map ] && rm ${DOCS_OUTPUT}.map
 
+yarn sass \
+  --load-path=node_modules \
+  --load-path=../node_modules \
+  --style=compressed \
+  --source-map \
+  --embed-sources \
+  $DOCS_INPUT $DOCS_OUTPUT
+
+echo -e "\033[32m✓ Build completed successfully\033[m"
 exit 0
