@@ -3,7 +3,6 @@
 - [**Getting started**](pages/quick-start.md)
 
 - Styles
-
   - [Helpers](pages/helpers.md)
   - [Typography](pages/typography.md)
   - [Responsive Grid](pages/responsive.md)
@@ -15,4 +14,4 @@
 
 - Mixins
 
-- [Github](https://github.com/sixertoy/napper-styles)
+- [Github](https://github.com/sixertoy/nappr-styles)
