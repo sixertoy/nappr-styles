@@ -1,0 +1,60 @@
+@use '../configs/' as configs;
+@use '../core/mixins/' as mixins;
+
+// ==========================================================
+// Mixins
+// ==========================================================
+
+@mixin is-hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin is-visible {
+  display: inherit;
+  visibility: inherit;
+}
+
+@mixin screen-reader-only {
+  border: 0;
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+// ==========================================================
+// UTILITY CLASSES
+// ==========================================================
+
+.is-hidden {
+  @include is-hidden;
+}
+
+.is-visible {
+  @include is-visible;
+}
+
+.sr-only {
+  @include screen-reader-only;
+}
+
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    .is-hidden-#{$key} {
+      @include is-hidden;
+    }
+
+    .is-visible-#{$key} {
+      @include is-visible;
+    }
+
+    .sr-only-#{$key} {
+      @include screen-reader-only;
+    }
+  }
+}

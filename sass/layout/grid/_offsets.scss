@@ -1,0 +1,35 @@
+@use '../../core/mixins/' as mixins;
+@use '../../configs/' as configs;
+@use '../../core/funcs/map' as map;
+
+@for $i from 0 through map.get(configs.$NAPPR_GRID, 'columns') {
+  .grid-col-offset-#{$i} {
+    grid-column-start: #{$i + 1};
+  }
+}
+
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    @for $i from 0 through map.get(configs.$NAPPR_GRID, 'columns') {
+      .grid-#{$key}-col--offset-#{$i} {
+        grid-column-start: #{$i + 1};
+      }
+    }
+  }
+}
+
+@for $i from 0 through map.get(configs.$NAPPR_GRID, 'columns') {
+  .grid-col--offset-#{$i}__right {
+    grid-column-end: #{$i + 1};
+  }
+}
+
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    @for $i from 0 through map.get(configs.$NAPPR_GRID, 'columns') {
+      .grid-#{$key}-col--offset-#{$i}__right {
+        grid-column-end: #{$i + 1};
+      }
+    }
+  }
+}

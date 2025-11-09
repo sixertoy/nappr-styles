@@ -1,0 +1,102 @@
+@use '../core/placeholders/' as *;
+@use '../core/funcs/list' as list;
+@use '../core/funcs/map' as map;
+
+@each $value in list.steps(1, 12) {
+  .flex-#{$value} {
+    flex: #{$value};
+  }
+}
+
+@each $key, $direction in ('columns': row, 'rows': column) {
+  .flex-#{$key} {
+    @extend %flex-base;
+
+    flex-direction: $direction;
+  }
+
+  .flex-#{$key}-reverse {
+    flex-direction: #{$direction}-reverse;
+  }
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-wrap-inverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex-wrapper {
+  @extend %flex-wrapper;
+}
+
+// ==========================================================
+// Flexbox Layouts (Distribution)
+// ==========================================================
+
+@each $key,
+  $value
+    in (
+      'start': flex-start,
+      'center': center,
+      'end': flex-end,
+      'between': space-between,
+      'around': space-around,
+      'evenly': space-evenly,
+      'stretch': stretch
+    )
+{
+  .flex-#{$key} {
+    justify-content: $value;
+  }
+}
+
+// fait grandir les éléments eux-mêmes pour occuper l'espace disponible sur l'axe principal
+.flex-justify > * {
+  flex: 1 1 auto;
+}
+
+// ==========================================================
+// Items Spacers
+// ==========================================================
+
+@each $key,
+  $value
+    in (
+      'start': flex-start,
+      'center': center,
+      'end': flex-end,
+      'stretch': stretch,
+      'baseline': baseline
+    )
+{
+  .items-#{$key} {
+    align-items: $value;
+  }
+
+  .self-#{$key} {
+    align-self: $value;
+  }
+}
+
+$gaps-map: list.steps(1, 6);
+$gaps-map: map.mirror($gaps-map);
+$gaps-map: map.merge(
+  $gaps-map,
+  (
+    '0': 0,
+    '0-75': 0.75,
+    '1': 1,
+    '1-5': 1.5,
+    '2': 2,
+    '2-5': 2.5,
+  )
+);
+
+@each $key, $value in $gaps-map {
+  .gap-#{$key}v {
+    gap: #{$value}rem;
+  }
+}

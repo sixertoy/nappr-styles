@@ -1,0 +1,78 @@
+@use '../core/placeholders/' as *;
+
+// ==========================================================
+// Placeholders
+// ==========================================================
+%scroll-smooth-mobile {
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling sur iOS */
+  overscroll-behavior: contain; /* Empêche le scroll bounce sur iOS */
+}
+
+%is-scrollbox {
+  @extend %is-full-layout;
+  @extend %position-absolute;
+  @extend %scroll-smooth-mobile;
+
+  overflow: auto;
+}
+
+%is-scrollbox-y {
+  @extend %is-full-layout;
+  @extend %position-absolute;
+  @extend %scroll-smooth-mobile;
+
+  overflow: hidden auto;
+}
+
+%scroll-x-auto {
+  @extend %scroll-smooth-mobile;
+
+  overflow: auto hidden;
+}
+
+%scroll-y-auto {
+  @extend %scroll-smooth-mobile;
+
+  overflow: hidden auto;
+}
+
+// ==========================================================
+// Utility Classes
+// ==========================================================
+.scroll-x-only {
+  overflow: scroll hidden;
+}
+
+.scroll-y-only {
+  overflow: hidden scroll;
+}
+
+.scroll-x-auto {
+  @extend %scroll-x-auto;
+}
+
+.scroll-y-auto {
+  @extend %scroll-y-auto;
+}
+
+.scrollbox-wrapper {
+  @extend %position-relative;
+}
+
+.scrollbox {
+  @extend %is-scrollbox;
+}
+
+.scrollbox-y {
+  @extend %is-scrollbox;
+  @extend %scroll-y-auto;
+
+  height: auto;
+}
+
+.scrollbox-x {
+  @extend %is-scrollbox;
+  @extend %scroll-x-auto;
+
+  height: auto;
+}

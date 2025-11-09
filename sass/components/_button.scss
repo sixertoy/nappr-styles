@@ -1,0 +1,244 @@
+@use 'sass:color';
+
+// $COMPONENT_CONFIG: (
+//   'hover-lightness': -10%,
+//   'active-lightness': -15%,
+// ) !default;
+
+// ==========================================================
+// BUTTON PLACEHOLDERS
+// ==========================================================
+
+%button-base {
+  align-items: center;
+  border: 0;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  gap: 0.5rem;
+  justify-content: center;
+  line-height: 1.2;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  &.btn--rounded {
+    border-radius: 9999px;
+  }
+
+  // Focus state
+  &:focus-visible {
+    outline: 2px solid var(--nappr-theme-accent);
+    outline-offset: 2px;
+  }
+
+  // No outline modifier
+  &.btn--no-outline {
+    &:focus-visible {
+      outline: none;
+    }
+  }
+}
+
+// Button disabled state
+%button-disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+%button-group-base {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+// ==========================================================
+// BUTTON MIXINS
+// ==========================================================
+
+@mixin button-interactive {
+  &:not(:disabled, .disabled) {
+    @content;
+  }
+}
+
+@mixin button-transition {
+  transition:
+    background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out,
+    color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+
+  // Note: border-color is included for secondary variant which has a border
+}
+
+// ==========================================================
+// BUTTON COMPONENT
+// ==========================================================
+
+.btn {
+  @extend %button-base;
+  @include button-transition;
+
+  // Icon support
+  .icon {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  // Icon only (no text)
+  &.btn--icon-only {
+    aspect-ratio: 1;
+
+    // padding: config.$NAPPR_BUTTON_PADDING_Y;
+
+    .icon {
+      margin: 0;
+    }
+  }
+
+  // Icon on the left
+  &.btn--icon-left {
+    .icon {
+      order: -1;
+    }
+  }
+
+  // Icon on the right (default)
+  &.btn--icon-right {
+    .icon {
+      order: 1;
+    }
+  }
+
+  // Hover state
+  @include button-interactive {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  // Disabled state
+  &:disabled,
+  &.disabled {
+    @extend %button-disabled;
+  }
+}
+
+// ==========================================================
+// BUTTON VARIANTS (PRIORITIES)
+// ==========================================================
+
+// Primary (default)
+.btn,
+.btn--primary {
+  background-color: var(--nappr-theme-accent);
+  border: 0;
+  color: var(--nappr-theme-text-primary);
+
+  @include button-interactive {
+    &:hover {
+      // Use color-mix for hover state (darken by 10%)
+      background-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 90%,
+        black 10%
+      );
+    }
+
+    &:active {
+      // Use color-mix for active state (darken by 15%)
+      background-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 85%,
+        black 15%
+      );
+    }
+  }
+}
+
+// Secondary (variant of primary)
+.btn--secondary {
+  background-color: transparent;
+  border: 1px solid var(--nappr-theme-accent);
+  color: var(--nappr-theme-accent);
+
+  @include button-interactive {
+    &:hover {
+      background-color: var(--nappr-theme-accent);
+      color: var(--nappr-theme-text-primary);
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 90%,
+        black 10%
+      );
+      border-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 90%,
+        black 10%
+      );
+      color: var(--nappr-theme-text-primary);
+    }
+  }
+}
+
+// Tertiary (border only, background on hover)
+.btn--tertiary {
+  background-color: transparent;
+  border: 1px solid var(--nappr-theme-accent);
+  color: var(--nappr-theme-accent);
+
+  @include button-interactive {
+    &:hover {
+      background-color: var(--nappr-theme-accent);
+      border-color: var(--nappr-theme-accent);
+      color: var(--nappr-theme-text-primary);
+    }
+
+    &:active {
+      background-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 90%,
+        black 10%
+      );
+      border-color: color-mix(
+        in srgb,
+        var(--nappr-theme-accent) 90%,
+        black 10%
+      );
+      color: var(--nappr-theme-text-primary);
+    }
+  }
+}
+
+.btns-group {
+  @extend %button-group-base;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.btns-group--inline {
+  @extend %button-group-base;
+
+  flex-direction: row;
+
+  & > * {
+    width: auto;
+  }
+}

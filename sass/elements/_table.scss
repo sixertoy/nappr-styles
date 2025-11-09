@@ -1,0 +1,32 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: var(--nappr-default-font-size, 0.75rem);
+  max-width: 100%;
+  min-width: 100%;
+  overflow: scroll;
+  text-align: left;
+  width: 100%;
+}
+
+table th {
+  font-weight: bold;
+}
+
+table th,
+table td {
+  display: table-cell;
+  overflow: hidden;
+  padding: 0.75rem 1rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+table th:last-child,
+table td:last-child {
+  border-right: 0;
+}
+
+table caption {
+  caption-side: top;
+}

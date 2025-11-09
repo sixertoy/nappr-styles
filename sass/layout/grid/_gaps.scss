@@ -1,0 +1,42 @@
+@use '../../core/funcs/map' as map;
+@use '../../core/mixins/' as mixins;
+@use '../../configs/' as configs;
+
+// --- Utilisation de variables CSS pour les gaps ---
+.grid-gap {
+  $value: map.get(configs.$NAPPR_GRID, 'gutter-gap-md');
+
+  gap: var(--nappr-grid-gutter-gap-md, #{$value});
+}
+
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    .grid-#{$key}--gap {
+      $value: map.get(configs.$NAPPR_GRID, 'gutter-gap-#{$key}');
+
+      gap: var(--nappr-grid-gutter-gap-#{$key}, #{$value});
+    }
+  }
+}
+
+.grid--no-gap {
+  gap: 0;
+}
+
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    .grid-#{$key}--no-gap {
+      gap: 0;
+    }
+  }
+}
+
+@include mixins.media-query-min('lg') {
+  .grid-gap,
+  .grid-md-gap,
+  .grid-sm-gap {
+    $value: map.get(configs.$NAPPR_GRID, 'gutter-gap-lg');
+
+    gap: var(--nappr-grid-gutter-gap-lg, #{$value});
+  }
+}

@@ -1,0 +1,120 @@
+@use '../configs/' as configs;
+@use '../core/mixins/' as mixins;
+@use '../core/funcs/map' as map;
+@use '../core/funcs/string' as string;
+
+// @use '../core/funcs/list' as list;
+// @use '../core/funcs/math' as math;
+
+// ==========================================================
+// Functions
+// ==========================================================
+// @function generate-spacers-map(
+//   $min,
+//   $max,
+//   $base: 4,
+//   $suffix: 'v',
+//   $unit: 'rem'
+// ) {
+//   $map: ();
+//   $range: list.iterate($min, $max);
+
+//   @each $i in $range {
+//     $value: math.div($i, $base);
+//     $key: if($i < 0, 'n#{math.abs($i)}#{$suffix}', '#{$i}#{$suffix}');
+//     $token: if($i == 0, '0', $key);
+//     $map: map.set($map, $token, #{$value}#{$unit});
+//   }
+
+//   $map: map.merge(
+//     (
+//       'auto': auto,
+//       'n1-5#{$suffix}': -0.375#{$unit},
+//       'n0-5#{$suffix}': -0.125#{$unit},
+//       '0-5#{$suffix}': 0.125#{$unit},
+//       '1-5#{$suffix}': 0.375#{$unit},
+//     ),
+//     $map
+//   );
+
+//   @return $map;
+// }
+
+// ==========================================================
+// Mixins
+// ==========================================================
+@function get-classname-prefix($prop, $suffix: '') {
+  $first-letter: string.slice('#{$prop}', 0, 1);
+  $classname: '.#{$first-letter}#{$suffix}';
+
+  @return $classname;
+}
+
+@function get-classname-suffix($side, $token, $bpt: null) {
+  $abbr-map: (
+    'all': '',
+    'topbottom': 'y',
+    'leftright': 'x',
+  );
+  $bpt-prefix: if($bpt != null, '-#{$bpt}', '');
+  $side-abbr: if(
+    map.has-key($abbr-map, $side),
+    map.get($abbr-map, $side),
+    string.slice($side, 0, 1)
+  );
+  $classname-suffix: '#{$side-abbr}#{$bpt-prefix}-#{$token}';
+
+  @return $classname-suffix;
+}
+
+@mixin generate-spacers($token-map, $bpt: null) {
+  @each $token, $value in $token-map {
+    @each $side in (all, topbottom, leftright, top, left, right, bottom) {
+      $is-auto: $token == 'auto';
+      $classname-suffix: get-classname-suffix($side, $token, $bpt);
+      $current-props: if($is-auto, (margin), (margin, padding));
+
+      @each $prop in $current-props {
+        $classname-prefix: get-classname-prefix($prop);
+        $classname: string.concat($classname-prefix, $classname-suffix);
+        $css-value: if(
+          $is-auto,
+          auto,
+          var(--nappr-spacing-#{$token}, #{$value})
+        );
+
+        @if $side == 'all' {
+          #{$classname} {
+            #{$prop}: $css-value;
+          }
+        } @else if $side == 'topbottom' {
+          #{$classname} {
+            #{$prop}-top: $css-value;
+            #{$prop}-bottom: $css-value;
+          }
+        } @else if $side == 'leftright' {
+          #{$classname} {
+            #{$prop}-left: $css-value;
+            #{$prop}-right: $css-value;
+          }
+        } @else {
+          #{$classname} {
+            #{$prop}-#{$side}: $css-value;
+          }
+        }
+      }
+    }
+  }
+}
+
+// ==========================================================
+// UTILITY CLASSES
+// ---
+// generate spacers classes
+// Exemple: .m-0-5v, .p-2v, .mx-3v-md
+// ==========================================================
+@include generate-spacers(configs.$NAPPR_SPACING);
+
+@include mixins.media-query-min('md') {
+  @include generate-spacers(configs.$NAPPR_SPACING, 'md');
+}

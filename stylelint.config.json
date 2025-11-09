@@ -1,0 +1,74 @@
+{
+  "customSyntax": "postcss-scss",
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-standard-scss"
+  ],
+  "ignoreFiles": [
+    "**/*.css",
+    "dist/**",
+    "node_modules/**"
+  ],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
+  "rules": {
+    "at-rule-no-unknown": null,
+    "color-hex-length": "long",
+    "custom-property-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*(?:--[a-z0-9]+)?$",
+      {
+        "message": "Expected custom property name to be strict kebab-case, with optional BEM-like state modifier (e.g., --var-name--state)"
+      }
+    ],
+    "order/order": [
+      {
+        "type": "at-rule",
+        "name": "forward",
+        "hasBlock": false
+      },
+      {
+        "type": "at-rule",
+        "name": "use",
+        "hasBlock": false
+      },
+      "custom-properties",
+      "declarations"
+    ],
+    "order/properties-alphabetical-order": true,
+    "scss/at-import-partial-extension-blacklist": null,
+    "scss/at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "return"
+        ]
+      }
+    ],
+    "scss/dollar-variable-pattern": [
+      "^([a-z][a-z0-9]*(-[a-z0-9]+)*|[A-Z][A-Z0-9_]*)$",
+      {
+        "message": "Expected variable to be kebab-case or UPPER_CASE for constants"
+      }
+    ],
+    "scss/operator-no-newline-after": null,
+    "scss/percent-placeholder-pattern": [
+      "^[a-z][a-z0-9]*(?:-[a-z0-9]+)*(?:__[a-z0-9]+(?:-[a-z0-9]+)*)?(?:--[a-z0-9]+(?:-[a-z0-9]+)*)?$"
+    ],
+    "selector-class-pattern": [
+      "^([a-z][a-z0-9]*)(-[a-z0-9]+)*(__[a-z0-9]+(-[a-z0-9]+)*)?(--[a-z0-9]+(-[a-z0-9]+)*)?$"
+    ],
+    "selector-id-pattern": [
+      "^[a-z][a-z0-9]*(-[a-z0-9]+)*$"
+    ],
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": [
+          "export"
+        ]
+      }
+    ]
+  }
+}

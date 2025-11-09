@@ -1,0 +1,41 @@
+%nappr-list-base {
+  --nappr-xl-size: var(--nappr-xl-base);
+
+  margin: 0;
+  margin-block: 0;
+  padding: 0;
+  padding-inline-start: 0;
+}
+
+%nappr-list-item-base {
+  --nappr-xl-base: calc(var(--nappr-xl-size) * 0.9);
+
+  padding-bottom: 0;
+}
+
+%nappr-list-type--unstyled {
+  @extend %nappr-list-base;
+
+  list-style-type: none;
+
+  li,
+  dt,
+  dd {
+    @extend %nappr-list-item-base;
+  }
+}
+
+%nappr-list-type--styled {
+  @extend %nappr-list-base;
+
+  margin-block: 0.5rem;
+  padding-inline-start: 1rem;
+
+  li,
+  dt,
+  dd {
+    @extend %nappr-list-item-base;
+
+    padding-bottom: 0.25rem;
+  }
+}

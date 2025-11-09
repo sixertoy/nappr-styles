@@ -1,0 +1,83 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  background-color: var(--nappr-theme-background);
+  color: var(--nappr-theme-text-secondary);
+  font-family: var(--nappr-text-font-family);
+  font-size: var(--nappr-text-font-size);
+  min-height: 100vh;
+  text-rendering: optimizespeed;
+  width: 100vw;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote::before,
+blockquote::after,
+q::before,
+q::after {
+  content: '';
+  content: none;
+}
+
+pre {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+p {
+  white-space: initial;
+}
+
+sub,
+sup {
+  line-height: 1;
+}
+
+button,
+[role='reset'],
+[role='submit'],
+[role='button'] {
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  overflow: hidden;
+  text-align: center;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  user-select: none;
+  white-space: nowrap;
+}
+
+hr,
+input,
+button,
+textarea,
+[role='reset'],
+[role='submit'],
+[role='button'] {
+  margin: 0;
+  padding: 0;
+}
+
+.disabled,
+:disabled,
+:disabled:link,
+:disabled:visited,
+:disabled:hover,
+:disabled:active {
+  box-shadow: inherit;
+  cursor: default;
+  cursor: not-allowed;
+  pointer-events: none;
+  text-shadow: inherit;
+}
+
+#root {
+  isolation: isolate;
+}

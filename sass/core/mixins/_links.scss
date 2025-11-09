@@ -1,0 +1,12 @@
+// NOTE
+// a:hover MUST come after: link and a:visited
+// a:active must come after a:hover
+@mixin as-link($color) {
+  &,
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    color: $color;
+  }
+}

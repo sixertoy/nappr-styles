@@ -1,0 +1,24 @@
+@use '../themes/light' as light;
+@use '../themes/dark' as dark;
+
+$NAPPR_THEMES: (
+  'dark-theme': dark.$theme,
+  'light-theme': light.$theme,
+  'theme-keys': (
+    'background',
+    'panel',
+    'rollover',
+    'accent',
+    'border',
+    'text-primary',
+    'text-secondary',
+    'text-disabled',
+    'text-hover-bg',
+    'text-active-bg',
+    'state-success',
+    'state-warning',
+    'state-error',
+    'state-info',
+    'state-debug',
+  ),
+) !default;

@@ -1,0 +1,13 @@
+@use '../core/placeholders/' as *;
+@use '../core/mixins/' as mixins;
+@use '../configs/' as configs;
+
+// ==========================================================
+// TEXT
+// ==========================================================
+
+@include mixins.generate-heading-styles(configs.$NAPPR_HEADINGS);
+
+p {
+  @extend %text-base;
+}

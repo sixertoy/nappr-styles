@@ -1,0 +1,26 @@
+@use '../placeholders/' as *;
+@use '../funcs/map' as map;
+@use '../funcs/math' as math;
+@use 'media-queries' as media-queries;
+
+@mixin generate-heading-styles($map, $prefix: '') {
+  @each $key, $values in $map {
+    $selector: if($prefix == '', #{$key}, '#{$prefix}-#{$key}');
+
+    #{$selector} {
+      @extend %heading-base;
+
+      $fs-base: map.get($values, 'base');
+
+      font-size: $fs-base;
+      line-height: math.calculate-line-height($fs-base);
+
+      @include media-queries.media-query-min('xl') {
+        $fs-xl: map.get($values, 'xl');
+
+        font-size: $fs-xl;
+        line-height: math.calculate-line-height($fs-xl);
+      }
+    }
+  }
+}

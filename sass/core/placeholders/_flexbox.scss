@@ -1,0 +1,11 @@
+%flex-base {
+  display: flex;
+  flex: 1;
+}
+
+%flex-wrapper {
+  @extend %flex-base;
+
+  flex-flow: row wrap;
+  justify-content: space-between;
+}

@@ -1,0 +1,21 @@
+@use 'dimensions';
+@use 'displays';
+@use 'flexbox';
+@use 'floats';
+@use 'negates';
+@use 'palette';
+@use 'pointers';
+@use 'scrolls';
+@use 'spacers';
+@use 'square-grid';
+@use 'typography';
+@use 'visibility';
+@use 'wrap';
+
+// @use 'lists';
+
+body {
+  color: var(--nappr-theme-text-secondary);
+  font-family: var(--nappr-text-font-family);
+  font-size: var(--nappr-text-font-size);
+}

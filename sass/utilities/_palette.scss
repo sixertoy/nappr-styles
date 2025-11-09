@@ -1,0 +1,11 @@
+// Applique la variable CSS locale --nappr-data-color à la couleur du texte.
+// @example <div data-color="black" class="text-data-color">Texte noir</div>
+.text-data-color {
+  color: var(--nappr-data-color);
+}
+
+// Applique la variable CSS locale --nappr-data-color au fond.
+// @example <div data-color="black" class="bg-data-color">Fond noir</div>
+.bg-data-color {
+  background-color: var(--nappr-data-color);
+}

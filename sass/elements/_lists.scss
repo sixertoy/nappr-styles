@@ -1,0 +1,11 @@
+dl,
+ol,
+ul {
+  --nappr-default-xl-size: var(--nappr-default-xl-base);
+}
+
+dd,
+dt,
+li {
+  --nappr-default-xl-base: calc(var(--nappr-default-xl-size) * 0.9);
+}

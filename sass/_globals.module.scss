@@ -1,0 +1,43 @@
+@use './configs/' as configs;
+@use './core/funcs/string' as string;
+
+// ==========================================================
+// Mixins
+// ==========================================================
+
+/**
+ * Export module variables
+ * @param {Map} $map - Map containing the variables to export
+ * @return {Void}
+ */
+@mixin export-moudles-variables($map) {
+  @each $token, $vars in $map {
+    $prefix: string.capitalize(string.camelize($token));
+
+    @each $key, $value in $vars {
+      $var: string.capitalize(string.camelize($key));
+
+      nappr#{$prefix}#{$var}: #{$value};
+    }
+  }
+}
+
+// ==========================================================
+// Root variables
+// ==========================================================
+$ROOT_EXPORTS: (
+  '': configs.$NAPPR_DEFAULTS,
+  'palette': configs.$NAPPR_PALETTES,
+  'breakpoint': configs.$NAPPR_BREAKPOINTS,
+  'theme': map.get(
+      configs.$NAPPR_THEMES,
+      map.get(configs.$NAPPR_DEFAULTS, 'default-theme')
+    ),
+);
+
+// ==========================================================
+// Export module variables
+// ==========================================================
+:export {
+  @include export-moudles-variables(globals.$ROOT_EXPORTS);
+}

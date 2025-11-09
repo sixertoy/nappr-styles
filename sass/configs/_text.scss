@@ -1,0 +1,39 @@
+$NAPPR_TEXT: (
+  'font-size': 1rem,
+  'font-family': 'Helvetica, Arial, Verdana, sans-serif',
+  'font-family--alt': '"Spectral", Georgia, serif',
+  'weights-light': 300,
+  'weights-regular': 400,
+  'weights-medium': 500,
+  'weights-bold': 700,
+  'weight': 400,
+  'weight--alt': 500,
+  'line-height': 1.5rem,
+  'spacing': 0 0 1.5rem 0,
+) !default;
+$NAPPR_HEADINGS: (
+  h1: (
+    base: 2rem,
+    xl: 2.5rem,
+  ),
+  h2: (
+    base: 1.75rem,
+    xl: 2rem,
+  ),
+  h3: (
+    base: 1.5rem,
+    xl: 1.75rem,
+  ),
+  h4: (
+    base: 1.375rem,
+    xl: 1.5rem,
+  ),
+  h5: (
+    base: 1.25rem,
+    xl: 1.375rem,
+  ),
+  h6: (
+    base: 1.125rem,
+    xl: 1.25rem,
+  ),
+) !default;

@@ -1,0 +1,121 @@
+@use '../core/funcs/map' as map;
+
+// ==========================================================
+// NEGATES
+// ==========================================================
+
+// --- TEXT DECORATION NEGATES (with link states) ---
+@each $state in ('', ':hover', ':active', ':visited') {
+  .no-underline,
+  a.no-underline#{$state} {
+    text-decoration: none;
+  }
+
+  .no-no-underline,
+  a.no-no-underline#{$state} {
+    text-decoration: none !important;
+  }
+}
+
+// --- NEGATES ---
+@each $name,
+  $config
+    in (
+      'background': (
+          'property': 'background',
+          'value': none,
+        ),
+      'events': (
+          'property': 'pointer-events',
+          'value': none,
+        ),
+      'flex-grow': (
+          'property': 'flex',
+          'value': 0 1,
+        ),
+      'flex-shrink': (
+          'property': 'flex',
+          'value': 1 0,
+        ),
+      'float': (
+          'property': 'float',
+          'value': none,
+        ),
+      'flex': (
+          'property': 'flex',
+          'value': none,
+        ),
+      'margin': (
+          'property': 'margin',
+          'value': 0,
+        ),
+      'padding': (
+          'property': 'padding',
+          'value': 0,
+        ),
+      'border': (
+          'property': 'border',
+          'value': 0,
+        ),
+      'radius': (
+          'property': 'border-radius',
+          'value': 0,
+        ),
+      'outline': (
+          'property': 'outline',
+          'value': none,
+        ),
+      'pointer': (
+          'property': 'cursor',
+          'value': default,
+        ),
+      'select': (
+          'property': 'user-select',
+          'value': none,
+        ),
+      'wrap': (
+          'property': 'white-space',
+          'value': nowrap,
+        )
+    )
+{
+  $property: map.get($config, 'property');
+  $value: map.get($config, 'value');
+
+  .no-#{$name} {
+    #{$property}: #{$value};
+  }
+
+  .no-no-#{$name} {
+    #{$property}: #{$value} !important;
+  }
+}
+
+// --- UTILITY CLASSES ---
+.no-click-allowed {
+  cursor: not-allowed;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+.no-no-overflow {
+  overflow: hidden !important;
+}
+
+.no-overflow-x {
+  overflow-x: hidden;
+}
+
+.no-no-overflow-x {
+  overflow-x: hidden !important;
+}
+
+.no-overflow-y {
+  overflow-y: hidden;
+}
+
+.no-no-overflow-y {
+  overflow-y: hidden !important;
+}

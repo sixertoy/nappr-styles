@@ -1,0 +1,36 @@
+@use '../core/funcs/map' as map;
+@use '../core/funcs/list' as list;
+@use '../core/funcs/math' as math;
+
+@function generate-spacers-map(
+  $min,
+  $max,
+  $base: 4,
+  $suffix: 'v',
+  $unit: 'rem'
+) {
+  $map: ();
+  $range: list.iterate($min, $max);
+
+  @each $i in $range {
+    $value: math.div($i, $base);
+    $key: if($i < 0, 'n#{math.abs($i)}#{$suffix}', '#{$i}#{$suffix}');
+    $token: if($i == 0, '0', $key);
+    $map: map.set($map, $token, #{$value}#{$unit});
+  }
+
+  $map: map.merge(
+    (
+      'auto': auto,
+      'n1-5#{$suffix}': #{-0.375}#{$unit},
+      'n0-5#{$suffix}': #{-0.125}#{$unit},
+      '0-5#{$suffix}': #{0.125}#{$unit},
+      '1-5#{$suffix}': #{0.375}#{$unit},
+    ),
+    $map
+  );
+
+  @return $map;
+}
+
+$NAPPR_SPACING: generate-spacers-map(-8, 32);

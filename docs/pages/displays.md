@@ -76,17 +76,35 @@
   </div>
 </pre>
 
-#### .is-top-to-bottom {
+#### .is-inset-0
 
-top: 0;
-bottom: 0;
-}
+> Place l'élément avec `inset: 0` (couvre tous les bords)
 
-#### .is-left-to-right {
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-inset-0" style="background-color:rgba(0,0,0,0.2);" />
+  </div>
+</pre>
 
-left: 0;
-right: 0;
-}
+#### .is-stretch-y
+
+> Étire l'élément verticalement de haut en bas (`top: 0; bottom: 0`)
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-stretch-y" style="left:10px;right:10px;background-color:rgba(0,0,0,0.2);" />
+  </div>
+</pre>
+
+#### .is-stretch-x
+
+> Étire l'élément horizontalement de gauche à droite (`left: 0; right: 0`)
+
+<pre class="docsify-example">
+  <div class="is-relative" style="min-height:144px;border:1px solid #CCC;min-width:100%;width:100%;height:140px;">
+    <div class="is-absolute is-stretch-x" style="top:10px;bottom:10px;background-color:rgba(0,0,0,0.2);" />
+  </div>
+</pre>
 
 ## Dimensions
 

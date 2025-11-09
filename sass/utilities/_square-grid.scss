@@ -1,0 +1,33 @@
+@use '../core/funcs/math' as math;
+
+// ==========================================================
+// Mixins
+// ==========================================================
+
+/**
+ * Generate square grid classes
+ * @param {Number} $gutters - Number of gutters
+ * @return {Void}
+ */
+@mixin generate-square-grid($gutters) {
+  @for $i from 1 through $gutters {
+    $gap: $i - 1;
+    $percent: math.div((100 - $gap), $i);
+    .square-grid-#{$i} > * {
+      width: math.number-to-percent($percent);
+    }
+  }
+}
+
+// ==========================================================
+// UTILITY CLASSES
+// ==========================================================
+
+.square-grid {
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1%;
+  justify-content: flex-start;
+}
+
+@include generate-square-grid(6);

@@ -5,6 +5,7 @@
 - Styles
   - [Helpers](pages/helpers.md)
   - [Typography](pages/typography.md)
+  - [Grid](pages/grid.md)
   - [Responsive Grid](pages/responsive.md)
   - [Scrollbox](pages/scrollbox.md)
   - [Display](pages/displays.md)

@@ -1,0 +1,12 @@
+$NAPPR_BREAKPOINTS: (
+  // Useless starts at 0px (Mobile Small)
+  // 'xs': 0em,
+  // Starts at 576px (Mobile)
+  'sm': 36em,
+  // Starts at 768px (Tablet)
+  'md': 48em,
+  // Starts at 992px (Desktop)
+  'lg': 62em,
+  // Starts at 1248px (Desktop Extra Large)
+  'xl': 78em
+) !default;

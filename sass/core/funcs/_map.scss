@@ -1,0 +1,42 @@
+// ----------------------------------
+// Imports
+// ----------------------------------
+@forward 'sass:map';
+@use 'sass:map' as map;
+@use 'sass:list' as list;
+@use 'sass:math' as math;
+
+// ----------------------------------
+// Functions
+// ----------------------------------
+
+/**
+ * Generate a map by mirroring the values of a list
+ * @param {list} $list - The list to generate the map from
+ * @return {map} - The map of keys and values
+ */
+@function mirror($list) {
+  $map: ();
+
+  @each $key in $list {
+    $map: map.set($map, $key, $key);
+  }
+
+  @return $map;
+}
+
+/**
+ * Generate a map of numbers with the index of each value in a map
+ * @param {map} $map - The map to generate the list from
+ * @return {list} - The list of numbers
+ */
+@function each-index($list) {
+  $next: ();
+
+  @each $value in $list {
+    $i: list.index($list, $value);
+    $next: map.set($next, $i, $value);
+  }
+
+  @return $next;
+}

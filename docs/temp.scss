@@ -1,0 +1,122 @@
+// ==============================================
+// 1. Variables : Polices et Couleurs (Basé sur le DSFR)
+// ==============================================
+
+// Polices
+$font-marianne: 'Marianne', arial, sans-serif;
+$font-spectral: 'Spectral', georgia, serif; // Utilisée pour les Displays selon la charte
+
+// Couleurs (Tokens DSFR - à ajuster si besoin)
+$color-text-default: #161616; // Couleur G800 sur fond clair
+$color-text-inverted: #ffffff; // Couleur White sur fond foncé
+$margin-bottom-heading: 1.5rem; // 24px/16 = 1.5rem (pour h1-h6)
+$margin-bottom-display: 2rem; // 32px/16 = 2rem (pour les displays)
+
+// Variables de taille de police (À REMPLACER PAR LES VALEURS EXACTES DU DSFR)
+// Ces valeurs sont indicatives et doivent être vérifiées dans la documentation DSFR
+$h1-font-size: 2.5rem; // Ex: 40px
+$h2-font-size: 2rem; // Ex: 32px
+$h3-font-size: 1.75rem; // Ex: 28px
+$h4-font-size: 1.5rem; // Ex: 24px
+$h5-font-size: 1.25rem; // Ex: 20px
+$h6-font-size: 1rem; // Ex: 16px
+
+$display-xl-font-size: 4rem; // Très grand display
+$display-lg-font-size: 3rem; // Grand display
+$display-md-font-size: 2.5rem; // Display moyen
+
+// ==============================================
+// 2. Mixin pour styliser un titre
+// ==============================================
+
+@mixin heading-style(
+  $font-size,
+  $font-weight: 700,
+  $font-family: $font-marianne,
+  $margin-bottom: $margin-bottom-heading
+) {
+  color: $color-text-default;
+  font-family: $font-family;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  line-height: 1.2; // Ligne de hauteur à vérifier dans le DSFR
+  margin-bottom: $margin-bottom;
+  margin-top: 0; // Réinitialise la marge supérieure
+
+  // Style pour le mode sombre ou fond coloré
+  .fr-scheme-dark &,
+  .fr-background-alt & {
+    color: $color-text-inverted;
+  }
+}
+
+// ==============================================
+// 3. Application des styles aux balises HTML (H1 à H6)
+// ==============================================
+
+h1 {
+  @include heading-style($h1-font-size, 700); // Généralement Bold
+}
+
+h2 {
+  @include heading-style($h2-font-size, 700);
+}
+
+h3 {
+  @include heading-style($h3-font-size, 700);
+}
+
+h4 {
+  @include heading-style($h4-font-size, 700);
+}
+
+h5 {
+  @include heading-style($h5-font-size, 700);
+}
+
+h6 {
+  @include heading-style($h6-font-size, 700);
+}
+
+// ==============================================
+// 4. Titres Alternatifs (Display)
+// ==============================================
+
+// Les displays utilisent souvent la police Spectral et un poids plus lourd
+.fr-display--xl {
+  @include heading-style(
+    $display-xl-font-size,
+    800,
+    $font-spectral,
+    $margin-bottom-display
+  );
+}
+
+.fr-display--lg {
+  @include heading-style(
+    $display-lg-font-size,
+    800,
+    $font-spectral,
+    $margin-bottom-display
+  );
+}
+
+.fr-display--md {
+  @include heading-style(
+    $display-md-font-size,
+    800,
+    $font-spectral,
+    $margin-bottom-display
+  );
+}
+
+// Classe pour réinitialiser le style de titre (si besoin)
+.fr-text--lead {
+  font-family: $font-marianne;
+
+  // Style spécifique pour un texte d'introduction
+  font-size: 1.25rem;
+  font-weight: 400;
+
+  // Autres styles...
+}

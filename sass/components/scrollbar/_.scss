@@ -1,0 +1,102 @@
+// ==========================================================
+// SCROLLBAR COMPONENT
+// ==========================================================
+// Customizable scrollbar styles
+// Apply the .scrollbar class to a parent element to enable custom scrollbar styling
+// ----
+// Usage:
+//   <div class="scrollbar">...</div>
+// ----
+// Customization via CSS variables:
+//   <div class="scrollbar" style="--scrollbar-width: 12px; --scrollbar-thumb-color: #007bff;">...</div>
+// ----
+// Or via modifier classes:
+//   <div class="scrollbar scrollbar--thin">...</div>
+//   <div class="scrollbar scrollbar--dark">...</div>
+
+.scrollbar {
+  // CSS variables for customization (with defaults)
+  --scrollbar-width: 17px;
+  --scrollbar-track-color: var(--nappr-white, #ffffff);
+  --scrollbar-thumb-color: var(--nappr-grey-400, #cecece);
+  --scrollbar-thumb-hover-color: var(--nappr-grey-700, #383838);
+  --scrollbar-thumb-border-color: var(--nappr-white, #ffffff);
+  --scrollbar-corner-color: transparent;
+
+  // Webkit scrollbar styles
+  &::-webkit-scrollbar {
+    background: transparent;
+    overflow: visible;
+    width: var(--scrollbar-width);
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: var(--scrollbar-track-color);
+  }
+
+  &::-webkit-scrollbar-track-piece {
+    background-color: var(--scrollbar-track-color);
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: var(--scrollbar-corner-color);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb-color);
+    border: solid var(--scrollbar-thumb-border-color);
+    box-shadow:
+      inset 1px 1px 0 rgb(0 0 0 / 10%),
+      inset 0 -1px 0 rgb(0 0 0 / 7%);
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scrollbar-thumb-hover-color);
+  }
+
+  &::-webkit-scrollbar-thumb:horizontal {
+    border-width: 4px 6px;
+    min-width: 40px;
+  }
+
+  &::-webkit-scrollbar-thumb:vertical {
+    border-width: 6px 4px;
+    min-height: 40px;
+  }
+
+  scrollbar-color: var(--scrollbar-thumb-color) var(--scrollbar-track-color);
+
+  // Firefox scrollbar styles
+  scrollbar-width: thin;
+}
+
+// ==========================================================
+// SCROLLBAR MODIFIERS
+// ==========================================================
+
+// Thin scrollbar
+.scrollbar--thin {
+  --scrollbar-width: 8px;
+}
+
+// Dark theme scrollbar
+.scrollbar--dark {
+  --scrollbar-track-color: var(--nappr-grey-800, #1e1e1e);
+  --scrollbar-thumb-color: var(--nappr-grey-600, #6a6a6a);
+  --scrollbar-thumb-hover-color: var(--nappr-grey-500, #9c9c9c);
+  --scrollbar-thumb-border-color: var(--nappr-grey-800, #1e1e1e);
+}
+
+// Light theme scrollbar (default, but explicit)
+.scrollbar--light {
+  --scrollbar-track-color: var(--nappr-white, #ffffff);
+  --scrollbar-thumb-color: var(--nappr-grey-400, #cecece);
+  --scrollbar-thumb-hover-color: var(--nappr-grey-700, #383838);
+  --scrollbar-thumb-border-color: var(--nappr-white, #ffffff);
+}
+
+// Primary color scrollbar
+.scrollbar--primary {
+  --scrollbar-thumb-color: var(--nappr-primary-blue, #007bff);
+  --scrollbar-thumb-hover-color: var(--nappr-primary-blue, #007bff);
+}

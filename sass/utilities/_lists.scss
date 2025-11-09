@@ -1,0 +1,86 @@
+@use '../core/placeholders/' as *;
+
+// =================================================================
+// 1. Lists
+// =================================================================
+
+// --- 1.1. Unordered Lists ---
+
+ul.list--styled,
+ul.list--unstyled {
+  > li::marker {
+    font-size: calc(var(--xl-size) * 0.9);
+  }
+}
+
+ul.list--unstyled {
+  @extend %list-type--unstyled;
+}
+
+ul.list--styled {
+  @extend %list-type--styled;
+
+  list-style-type: disc;
+}
+
+// --- 1.2. Ordered Lists ---
+
+ol.list--styled,
+ol.list--unstyled {
+  counter-reset: li-counter;
+
+  > li {
+    counter-increment: li-counter;
+  }
+
+  > li::marker {
+    font-size: var(--xl-size);
+    font-weight: 700;
+  }
+}
+
+ol.list--unstyled {
+  @extend %list-type--unstyled;
+
+  > li::marker {
+    content: none;
+  }
+}
+
+ol.list--styled {
+  @extend %list-type--styled;
+
+  list-style-type: decimal;
+
+  > li::marker {
+    content: counters(li-counter, '.') '.  ';
+  }
+}
+
+// --- 1.3. Definition Lists ---
+
+dl.list--styled,
+dl.list--unstyled {
+  dd,
+  dl {
+    margin: 0;
+  }
+}
+
+dl.list--unstyled {
+  @extend %list-type--unstyled;
+
+  dd,
+  dl {
+    padding-inline-start: 0;
+  }
+}
+
+dl.list--styled {
+  @extend %list-type--styled;
+
+  dd,
+  dl {
+    padding-inline-start: 1rem;
+  }
+}

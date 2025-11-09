@@ -1,0 +1,72 @@
+$NAPPR_PALETTES: (
+  // --- Black & White Colors
+  'black': #000000,
+  'white': #ffffff,
+  'grey': #7f7f7f,
+
+  // --- Primary colors
+  'primary-blue': #007bff,
+  'primary-red': #ff0000,
+  'primary-green': #00ff00,
+  'primary-yellow': #f0f00f,
+  'primary-magenta': #800080,
+  'primary-orange': #ffa500,
+
+  // --- Usual colors
+  'usual-warning': #f5631a,
+  'usual-success': #268744,
+  'usual-info': #0762c8,
+  'usual-error': #ff0000,
+
+  // --- Highlight colors
+  'highlight-warning': #f5631a,
+  'highlight-success': #268744,
+  'highlight-info': #0762c8,
+  'highlight-error': #ff0000,
+
+  // --- Grey colors
+  'grey-100': #f8f8f8,
+  'grey-200': #f0f0f0,
+  'grey-300': #e7e7e7,
+  'grey-400': #cecece,
+  'grey-500': #9c9c9c,
+  'grey-600': #6a6a6a,
+  'grey-700': #383838,
+  'grey-750': #2a2a2a,
+  'grey-800': #1e1e1e,
+
+  // --- Pastel colors
+  'pastel-blue': #5db0d7,
+  'pastel-yellow': #f9da9b,
+  'pastel-red': #db8c62,
+  'pastel-green': #42b983,
+  'pastel-purple': #9a7fd5,
+  'pastel-verde': #40d4c7,
+  'pastel-kaki': #b9c580,
+  'pastel-gold': #c7b654,
+
+  // --- Chrome colors
+  'chrome-red': #ff8080,
+  'chrome-yellow': #ffdd9e,
+  'chrome-black': #242424,
+  'chrome-grey': #333333,
+  'chrome-light': #525252,
+  'chrome-white': #e6e6e6,
+
+  // --- MISC colors
+  'airbnb': #ff385c,
+  'amazon': #ff9900,
+  'twitch': #9147ff,
+  'youtube': #ff0000,
+  'twitter': #1da1f2,
+  'facebook': #365899,
+  'instagram': linear-gradient(
+      45deg,
+      #405de6,
+      #5851db,
+      #833ab4,
+      #c13584,
+      #e1306c,
+      #fd1d1d
+    )
+) !default;

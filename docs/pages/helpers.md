@@ -1,9 +1,9 @@
 ## Font Size
 
-> Les tailles des fonts sont à définir par la variable sass `$FONT_SIZES_MAP`
+> Les tailles des fonts sont à définir par la variable sass `$NAPPR_FONT_SIZES_MAP`
 
 ```scss
-$FONT_SIZES_MAP: (6, 8, 9, 12, 24, 26) !default;
+$NAPPR_FONT_SIZES_MAP: (6, 8, 9, 12, 24, 26) !default;
 ```
 
 **Exemple en utilisant la classe `.fs24`**
@@ -14,10 +14,10 @@ $FONT_SIZES_MAP: (6, 8, 9, 12, 24, 26) !default;
 
 ## Margin / Padding
 
-> Les tailles des margin/padding sont à définir par la variable sass `$SPACINGS_MAP`
+> Les tailles des margin/padding sont à définir par la variable sass `$NAPPR_SPACINGS_MAP`
 
 ```scss
-$SPACINGS_MAP: (3, 6, 9, 12, 18, 24, 48) !default;
+$NAPPR_SPACINGS_MAP: (3, 6, 9, 12, 18, 24, 48) !default;
 ```
 
 > Il est alors possible d'ajouter du margin/padding sur :
@@ -34,12 +34,12 @@ $SPACINGS_MAP: (3, 6, 9, 12, 18, 24, 48) !default;
 
 ## Borders
 
-> Le type de bordure est à définir par la variable `$BORDER_STYLE`
-> Les tailles des bordures sont à définir par la variable sass `$BORDER_SIZE_MAP`
+> Le type de bordure est à définir par la variable `$NAPPR_BORDER_STYLE`
+> Les tailles des bordures sont à définir par la variable sass `$NAPPR_BORDER_SIZE_MAP`
 
 ```scss
-$BORDER_STYLE: solid !default;
-$BORDER_SIZE_MAP: (1, 2, 3) !default;
+$NAPPR_BORDER_STYLE: solid !default;
+$NAPPR_BORDER_SIZE_MAP: (1, 2, 3) !default;
 ```
 
 > Il est alors possible d'ajouter des bordures sur :
@@ -58,10 +58,10 @@ $BORDER_SIZE_MAP: (1, 2, 3) !default;
 
 ## Border Radius
 
-> Les arrondis de bordures sont à définir par la variable sass `$BORDER_RADIUS_MAP`.
+> Les arrondis de bordures sont à définir par la variable sass `$NAPPR_BORDER_RADIUS_MAP`.
 
 ```scss
-$BORDER_RADIUS_MAP: (2, 3, 4, 8, 10, 12) !default;
+$NAPPR_BORDER_RADIUS_MAP: (2, 3, 4, 8, 10, 12) !default;
 ```
 
 > Il est alors possible d'ajouter des angles arrondis à un bloc sur :
@@ -83,8 +83,8 @@ $BORDER_RADIUS_MAP: (2, 3, 4, 8, 10, 12) !default;
 
 | Ancienne variable | Nouvelle variable |
 |-------------------|-------------------|
-| `$FontSizes` | `$FONT_SIZES_MAP` |
-| `$MarginPaddingSizes` | `$SPACINGS_MAP` |
-| `$BorderStyle` | `$BORDER_STYLE` |
-| `$BorderSizes` | `$BORDER_SIZE_MAP` |
-| `$BorderRadiusSizes` | `$BORDER_RADIUS_MAP` |
+| `$FontSizes` | `$NAPPR_FONT_SIZES_MAP` |
+| `$MarginPaddingSizes` | `$NAPPR_SPACINGS_MAP` |
+| `$BorderStyle` | `$NAPPR_BORDER_STYLE` |
+| `$BorderSizes` | `$NAPPR_BORDER_SIZE_MAP` |
+| `$BorderRadiusSizes` | `$NAPPR_BORDER_RADIUS_MAP` |

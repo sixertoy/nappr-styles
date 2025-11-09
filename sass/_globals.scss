@@ -1,0 +1,79 @@
+@use 'sass:meta';
+@use './configs/' as configs;
+@use './core/funcs/map' as map;
+
+// ==========================================================
+// Mixins
+// ==========================================================
+
+// Génère les variables CSS personnalisées pour :root
+// @param {Map} $map - Map contenant les configurations à exporter
+// @param {String} $prefix - Préfixe pour les variables
+@mixin generate-root-vars($map, $prefix: '') {
+  @each $key, $value in $map {
+    $is-map: meta.type-of($value) == 'map';
+
+    @if $is-map {
+      @include generate-root-vars($value, '#{$prefix}#{$key}');
+    } @else {
+      $name-prefix: if($prefix != '', '#{$prefix}-', '');
+      $var-name: '#{$name-prefix}#{$key}';
+
+      --nappr-#{$var-name}: #{$value};
+    }
+  }
+}
+
+@mixin generate-palette-variables($map) {
+  @each $key, $value in $map {
+    [data-color='#{$key}'] {
+      --nappr-data-color: #{$value};
+    }
+  }
+}
+
+// Génère les variables CSS personnalisées pour chaque thème
+// @param {Map} $map - Map contenant les configurations de thèmes
+@mixin generate-theme-variables($themes) {
+  @each $token, $map in $themes {
+    [data-theme='#{$token}'] {
+      @each $key, $value in $map {
+        --nappr-data-color: var(--nappr-palette-#{$token});
+      }
+    }
+  }
+}
+
+// ==========================================================
+// Root variables
+// ==========================================================
+$ROOT_EXPORTS: (
+  '': configs.$NAPPR_DEFAULTS,
+  'text': configs.$NAPPR_TEXT,
+  'palette': configs.$NAPPR_PALETTES,
+  'breakpoint': configs.$NAPPR_BREAKPOINTS,
+  'grid': configs.$NAPPR_GRID,
+  'spacing': configs.$NAPPR_SPACING,
+  'theme': map.get(
+      configs.$NAPPR_THEMES,
+      map.get(configs.$NAPPR_DEFAULTS, 'default-theme')
+    ),
+);
+$ROOT_THEMES_EXPORTS: (
+  'dark-theme': map.get(configs.$NAPPR_THEMES, 'dark-theme'),
+  'light-theme': map.get(configs.$NAPPR_THEMES, 'light-theme'),
+);
+
+// ==========================================================
+// Export root variables
+// ==========================================================
+:root {
+  // --- ROOT VARIABLES ---
+  @include generate-root-vars($ROOT_EXPORTS);
+}
+
+// --- THEME VARIABLES ---
+@include generate-palette-variables(configs.$NAPPR_PALETTES);
+
+// --- THEME VARIABLES ---
+@include generate-theme-variables($ROOT_THEMES_EXPORTS);

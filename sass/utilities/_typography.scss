@@ -1,0 +1,106 @@
+@use '../configs/' as configs;
+@use '../core/funcs/map' as map;
+@use '../core/mixins/' as mixins;
+@use '../core/funcs/list' as list;
+
+$font-sizes-map: list.steps(1, 20);
+$font-sizes-map: map.mirror($font-sizes-map);
+$font-sizes-map: map.merge(
+  $font-sizes-map,
+  (
+    '0': 0,
+    '0-75': 0.75,
+    '1': 1,
+    '1-5': 1.5,
+    '2': 2,
+    '2-5': 2.5,
+  )
+);
+
+@each $key, $value in $font-sizes-map {
+  .fs-#{$key}v {
+    font-size: #{$value}rem;
+  }
+}
+
+@each $key,
+  $value
+    in (
+      'thin': 100,
+      'light': 300,
+      'regular': 400,
+      'medium': 500,
+      'semi-bold': 600,
+      'bold': 700,
+      'extra-bold': 900
+    )
+{
+  .fw-#{$key} {
+    font-weight: $value;
+  }
+}
+
+// ==========================================================
+// HEADINGS
+// ==========================================================
+@include mixins.generate-heading-styles(configs.$NAPPR_HEADINGS, 'heading');
+
+// ==========================================================
+// TEXT ALIGNMENT
+// ==========================================================
+@each $key in (left, right, center, justify) {
+  .text-#{$key} {
+    text-align: $key;
+  }
+}
+
+// ==========================================================
+// TEXT TRANSFORM
+// ==========================================================
+@each $key in (lowercase, uppercase, capitalize) {
+  .is-#{$key} {
+    text-transform: $key;
+  }
+}
+
+// ==========================================================
+// TEXT DECORATION
+// ==========================================================
+.is-italic {
+  font-style: italic;
+}
+
+.is-underline {
+  text-decoration: underline;
+}
+
+.is-stroked {
+  text-decoration: line-through;
+}
+
+// ==========================================================
+// TEXT VARIANT
+// ==========================================================
+.is-small-caps {
+  font-variant: small-caps;
+}
+
+// ==========================================================
+// TEXT OVERFLOW
+// ==========================================================
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// ==========================================================
+// TEXT LINE BREAK
+// ==========================================================
+.text-line-break-normal {
+  overflow-wrap: normal;
+}
+
+.text-line-break--force-wrap {
+  overflow-wrap: break-word;
+}

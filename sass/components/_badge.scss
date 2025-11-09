@@ -1,0 +1,58 @@
+// ==========================================================
+// BADGE COMPONENT
+// ==========================================================
+
+.badge {
+  align-items: center;
+  border-radius: 0.25rem;
+  display: inline-flex;
+  font-family: inherit;
+  font-weight: 500;
+  gap: 0.5rem;
+  line-height: var(--nappr-text-line-height);
+  text-align: center;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  .icon {
+    align-items: center;
+    display: inline-flex;
+    flex-shrink: 0;
+    justify-content: center;
+  }
+
+  &.badge--icon-left {
+    .icon {
+      order: -1;
+    }
+  }
+}
+
+// ==========================================================
+// BADGE SIZES
+// ==========================================================
+
+// // Medium size (default)
+.badge,
+.badge--md {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.25rem;
+}
+
+// Small size
+.badge--sm {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.125rem;
+}
+
+// ==========================================================
+// BADGE VARIANTS (STATUS COLORS)
+// ==========================================================
+// Uses theme variables for dynamic theming support
+
+@each $key in ('info', 'error', 'debug', 'success', 'warning') {
+  .badge--#{$key} {
+    background-color: var(--nappr-theme-state-#{$key});
+    color: var(--nappr-theme-text-primary);
+  }
+}

@@ -1,0 +1,47 @@
+// ----------------------------------
+// Imports
+// ----------------------------------
+@forward 'sass:string';
+@use 'sass:list' as list;
+@use 'sass:string' as string;
+
+// ----------------------------------
+// Functions
+// ----------------------------------
+@function concat($string1, $string2) {
+  @return '#{$string1}#{$string2}';
+}
+
+@function contains($list, $value) {
+  @return not not list.index($list, $value);
+}
+
+@function capitalize($string) {
+  @return string.to-upper-case(string.slice($string, 1, 1)) +
+    string.slice($string, 2);
+}
+
+@function uncapitalize($string) {
+  @return string.to-lower-case(string.slice($string, 1, 1)) +
+    string.slice($string, 2);
+}
+
+@function camelize($string) {
+  $progress: string.to-lower-case($string);
+  $result: '';
+  $exclude: ' ', '-', '–', '—', '_', ',', ';', ':', '.';
+
+  @while list.length($progress) > 0 {
+    $char: string.slice($progress, 1, 1);
+
+    @if contains($exclude, $char) {
+      $progress: capitalize(string.slice($progress, 2, 2)) +
+        string.slice($progress, 3);
+    } @else {
+      $result: $result + $char;
+      $progress: string.slice($progress, 2);
+    }
+  }
+
+  @return $result;
+}

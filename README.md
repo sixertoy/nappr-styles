@@ -1,92 +1,45 @@
-# NAPPR Styles (SASS/CSS)
+# 🎂 NAPPR Styles
 
-[Documentation](https://sixertoy.github.io/nappr-styles)
+> Collection de classes utilitaires et de helpers SCSS/CSS, incluant un système de grille responsive basé sur CSS Grid.
 
-## Install
+## 📦 Installation
 
 ```bash
 yarn add https://github.com/sixertoy/nappr-styles.git#latest
 ```
 
-## Usage
+## 🎯 Usage
 
-### Configuration des variables
-
-Créez un fichier `variables.scss` pour personnaliser les variables :
+### Intégration CSS
 
 ```scss
-// Configuration principale
-$BODY_FONT_SIZE: 16px !default;
-$BODY_WIDTH: 100vw !default;
-$DEFAULT_SPACING: 12px !default;
-
-// Tailles de police
-$FONT_SIZES_MAP: (11, 12, 14, 16) !default;
-
-// Espacements
-$SPACINGS_MAP: (3, 6, 9, 12, 18, 24, 48) !default;
-
-// Dimensions
-$DIMENSIONS_MAP: (25, 50, 75, 100) !default;
-
-// Bordures
-$BORDER_STYLE: solid !default;
-$BORDER_SIZE_MAP: (1, 2, 3) !default;
-$BORDER_RADIUS_MAP: (4, 8, 12) !default;
+// Import dans votre fichier SCSS principal
+@import '@nappr/nappr-styles';
 ```
 
-### Import dans votre projet
+### Import des Sources SCSS
 
-Utilisez la syntaxe moderne `@use` :
+Pour surcharger les variables par défaut (couleurs, espacements, configuration de la grille, etc.), importez vos propres variables avant les sources de la librairie.
 
 ```scss
-@use './variables.scss' as *;
+// 1. Définition de vos variables personnalisées (fichier: './variables.scss')
+@use './variables.scss' as *; 
+
+// 2. Import des sources, qui utiliseront les variables définies ci-dessus
 @use '@nappr/nappr-styles/styles.scss' as *;
 ```
 
-## Deprecated
+## 📖 Documentation
 
-> ⚠️ **Version 1.0.0** : Les éléments suivants ont été supprimés. Veuillez migrer vers la nouvelle API.
+**[Documentation Complète](https://sixertoy.github.io/nappr-styles)**
 
-### Variables deprecated
+La documentation inclut les sections suivantes :
 
-Les variables en minuscules ont été remplacées par des variables en MAJUSCULES :
+  * **Guide de Démarrage Rapide :** Instructions pas à pas pour la première utilisation.
+  * **Système de Grille CSS Grid :** Détails sur l'utilisation du système de grille responsive.
+  * **Classes Utilitaires :** Référence complète des helpers, typographie et classes d'espacement.
+  * **Configuration des Variables :** Guide pour la personnalisation des paramètres globaux via SCSS.
 
-| Ancienne variable (deprecated) | Nouvelle variable |
-|-------------------------------|-------------------|
-| `$body-width` | `$BODY_WIDTH` |
-| `$body-font-size` | `$BODY_FONT_SIZE` |
-| `$default-spacing` | `$DEFAULT_SPACING` |
-| `$default-font-size` | ❌ Supprimée |
-| `$border-style` | `$BORDER_STYLE` |
-| `$border-size-map` | `$BORDER_SIZE_MAP` |
-| `$border-radius-map` | `$BORDER_RADIUS_MAP` |
-| `$line-height-map` | `$LINE_HEIGHT_MAP` |
-| `$font-sizes-map` | `$FONT_SIZES_MAP` |
-| `$spacings-map` | `$SPACINGS_MAP` |
-| `$dimensions-map` | `$DIMENSIONS_MAP` |
-| `$rem-baseline` | ❌ Supprimée (utilisez `sass-rem` directement) |
-| `$rem-fallback` | ❌ Supprimée (utilisez `sass-rem` directement) |
-| `$rem-px-only` | ❌ Supprimée (utilisez `sass-rem` directement) |
+### Pour les Contributeurs et Agents IA
 
-### Syntaxe deprecated
-
-L'ancienne syntaxe `@import` n'est plus supportée :
-
-```scss
-// ❌ Deprecated
-@import './_variables.scss';
-@import '~@nappr/nappr-styles/styles.scss';
-
-// ✅ Nouvelle syntaxe
-@use './variables.scss' as *;
-@use '@nappr/nappr-styles/styles.scss' as *;
-```
-
-### Migration
-
-Pour migrer votre code :
-
-1. **Remplacez toutes les variables** : Utilisez les variables en MAJUSCULES
-2. **Remplacez `@import` par `@use`** : Utilisez la syntaxe moderne des modules Sass
-3. **Configuration rem** : Si vous utilisiez `$rem-baseline`, `$rem-fallback` ou `$rem-px-only`, configurez directement `sass-rem` dans votre projet
+Voir [AGENT.md](./AGENT.md) pour la documentation complète des règles et conventions du projet, organisée dans `.cursor/rules/`.

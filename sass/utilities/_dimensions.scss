@@ -1,0 +1,11 @@
+@use '../core/funcs/list' as list;
+@use '../core/funcs/math' as math;
+
+// ==========================================================
+// UTILITY CLASSES
+// ==========================================================
+@each $size in list.steps(5, 100) {
+  .nappr-w-#{$size} {
+    width: math.number-to-percent($size);
+  }
+}

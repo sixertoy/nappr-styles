@@ -1,0 +1,35 @@
+// ----------------------------------
+// Imports
+// ----------------------------------
+@forward 'sass:math';
+
+// ----------------------------------
+// Functions
+// ----------------------------------
+@function number-to-pixel($size: 0) {
+  @return ($size * 1px);
+}
+
+@function number-to-percent($size: 0) {
+  @return ($size * 1%);
+}
+
+@function number-to-rem($size: 0) {
+  @return ($size * 1rem);
+}
+
+@function number-to-em($size: 0) {
+  @return ($size * 1em);
+}
+
+@function number-to-vh($size: 0) {
+  @return ($size * 1vh);
+}
+
+@function number-to-vw($size: 0) {
+  @return ($size * 1vw);
+}
+
+@function calculate-line-height($font-size-rem) {
+  @return $font-size-rem + 0.5rem;
+}

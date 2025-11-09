@@ -1,0 +1,157 @@
+@use '../../core/funcs/map' as map;
+@use '../../core/mixins/' as mixins;
+@use '../../configs/' as configs;
+
+%grid-base {
+  display: grid;
+  gap: map.get(configs.$NAPPR_GRID, 'gutter-gap-sm');
+  width: 100%;
+}
+
+%grid-fluid-base {
+  @extend %grid-base;
+  max-width: none;
+}
+
+// ==========================================================
+// 1. BASE GRID DEFINITION
+// ==========================================================
+
+.grid,
+.grid-sm {
+  @extend %grid-base;
+}
+
+.grid--fluid,
+.grid-sm--fluid {
+  @extend %grid-fluid-base;
+}
+
+.grid,
+.grid--fluid {
+  grid-template-columns: repeat(map.get(configs.$NAPPR_GRID, 'columns'), 1fr);
+}
+
+.grid-sm,
+.grid-sm--fluid {
+  grid-template-columns: repeat(
+    map.get(configs.$NAPPR_GRID, 'columns-sm'),
+    1fr
+  );
+}
+
+.grid {
+  max-width: map.get(configs.$NAPPR_GRID, 'max-width');
+}
+
+.grid-sm {
+  max-width: map.get(configs.$NAPPR_GRID, 'max-width-sm');
+}
+
+// ==========================================================
+// 6. ITEM ALIGNMENT UTILITY CLASSES
+// (align-items and justify-items)
+// ==========================================================
+
+// --- 6.1. Vertical item alignment (align-items) ---
+@each $name,
+  $value in ('top': start, 'middle': center, 'bottom': end, 'stretch': stretch)
+{
+  .grid-items-#{$name} {
+    align-items: #{$value};
+  }
+}
+
+// --- 6.2. Horizontal item justification (justify-items) ---
+$justify-values: (start, center, end, stretch);
+
+@each $value in $justify-values {
+  .grid-justify-#{$value} {
+    justify-items: #{$value};
+  }
+}
+
+// --- 6.3. Combined alignment and justification (place-items) ---
+$place-items-values: (start, center, end, stretch);
+
+@each $value in $place-items-values {
+  .grid-place-#{$value} {
+    place-items: #{$value};
+  }
+}
+
+// ==========================================================
+// 7. CONTENT ALIGNMENT UTILITY CLASSES
+// (align-content and justify-content)
+// ==========================================================
+
+// --- 7.1. Vertical content alignment (align-content) ---
+$align-content-values: (
+  'top': start,
+  'middle': center,
+  'bottom': end,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+  'stretch': stretch,
+);
+
+@each $name, $value in $align-content-values {
+  .grid-content-#{$name} {
+    align-content: #{$value};
+  }
+}
+
+// --- 7.2. Horizontal content justification (justify-content) ---
+$justify-content-values: (
+  'start': start,
+  'center': center,
+  'end': end,
+  'between': space-between,
+  'around': space-around,
+  'evenly': space-evenly,
+  'stretch': stretch,
+);
+
+@each $name, $value in $justify-content-values {
+  .grid-justify-content-#{$name} {
+    justify-content: #{$value};
+  }
+}
+
+// ==========================================================
+// 8. INDIVIDUAL ITEM ALIGNMENT UTILITY CLASSES
+// (align-self and justify-self)
+// ==========================================================
+
+// --- 8.1. Vertical alignment of an individual item (align-self) ---
+$align-self-values: (
+  'top': start,
+  'middle': center,
+  'bottom': end,
+  'stretch': stretch,
+);
+
+@each $name, $value in $align-self-values {
+  .grid-self-#{$name} {
+    align-self: #{$value};
+  }
+}
+
+// --- 8.2. Horizontal justification of an individual item (justify-self) ---
+$justify-self-values: (start, center, end, stretch);
+
+@each $value in $justify-self-values {
+  .grid-self-justify-#{$value} {
+    justify-self: #{$value};
+  }
+}
+
+// --- 8.3. Combined alignment and justification for an item (place-self) ---
+$place-self-values: (start, center, end, stretch);
+
+@each $value in $place-self-values {
+  .grid-self-place-#{$value} {
+    place-self: #{$value};
+  }
+}

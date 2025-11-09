@@ -1,0 +1,12 @@
+@use '../core/funcs/map' as map;
+@use '../core/placeholders/' as *;
+
+// ==========================================================
+// UTILITY CLASSES
+// ==========================================================
+
+@each $key, $value in map.each-index((100, 50, 33.3333, 25, 12.5)) {
+  .wrap-#{$key} {
+    @extend %flex-wrapper;
+  }
+}

@@ -1,0 +1,43 @@
+// ----------------------------------
+// Imports
+// ----------------------------------
+@forward 'sass:list';
+@use 'sass:math' as math;
+@use 'sass:list' as list;
+
+// ----------------------------------
+// Functions
+// ----------------------------------
+
+/**
+ * Generate a list of numbers with a given min and max value
+ * @param {number} $min - The minimum value of the list
+ * @param {number} $max - The maximum value of the list
+ * @return {list} - The list of numbers
+ */
+@function iterate($min, $max) {
+  $result: ();
+
+  @for $i from $min through $max {
+    $result: list.append($result, $i);
+  }
+
+  @return $result;
+}
+
+/**
+ * Generate a list of numbers with a given step and max value
+ * @param {number} $step - The step between each number
+ * @param {number} $max-value - The maximum value of the list
+ * @return {list} - The list of numbers
+ */
+@function steps($step, $max-value) {
+  $list: 0;
+
+  @for $i from 1 through math.floor(math.div($max-value, $step)) {
+    $value: $i * $step;
+    $list: list.append($list, $value);
+  }
+
+  @return $list;
+}

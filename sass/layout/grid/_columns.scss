@@ -1,0 +1,32 @@
+@use '../../core/funcs/map' as map;
+@use '../../core/mixins/' as mixins;
+@use '../../configs/' as configs;
+
+// Mixin pour générer les classes de colonnes
+@mixin generate-grid-columns($prefix: '') {
+  @for $i from 1 through map.get(configs.$NAPPR_GRID, 'columns') {
+    .grid#{$prefix}-col-#{$i} {
+      grid-column: span #{$i};
+    }
+  }
+}
+
+// Mixin pour générer les classes de template columns
+@mixin generate-grid-template-columns($prefix: '') {
+  @for $i from 1 through map.get(configs.$NAPPR_GRID, 'columns') {
+    .grid#{$prefix}-cols-#{$i} {
+      grid-template-columns: repeat(#{$i}, 1fr);
+    }
+  }
+}
+
+@include generate-grid-columns;
+@include generate-grid-template-columns;
+
+// Génération des classes responsives
+@each $key, $value in configs.$NAPPR_BREAKPOINTS {
+  @include mixins.media-query-min($key) {
+    @include generate-grid-columns('-#{$key}');
+    @include generate-grid-template-columns('-#{$key}');
+  }
+}

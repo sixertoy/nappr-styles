@@ -1,0 +1,127 @@
+@use '../core/placeholders/' as *;
+
+// ==========================================================
+// VERTICAL ALIGNMENT
+// ==========================================================
+
+@each $key in (top, middle, bottom, baseline, sub, super) {
+  .valign-#{$key} {
+    vertical-align: $key;
+  }
+}
+
+// ==========================================================
+// DISPLAY TYPES
+// ==========================================================
+
+@each $key in (flex, grid, block, inline, inline-block, table, table-cell) {
+  .is-#{$key} {
+    display: $key;
+  }
+}
+
+// ==========================================================
+// STRETCHING
+// ==========================================================
+
+.stretch-y {
+  bottom: 0;
+  top: 0;
+}
+
+.stretch-x {
+  left: 0;
+  right: 0;
+}
+
+// ==========================================================
+// PLACEMENTS
+// ==========================================================
+
+@each $token,
+  $values
+    in (
+      'tl': (
+          top,
+          left,
+        ),
+      'br': (
+          bottom,
+          right,
+        ),
+      'bl': (
+          bottom,
+          left,
+        ),
+      'tr': (
+          top,
+          right,
+        )
+    )
+{
+  .placement-#{$token} {
+    @each $value in $values {
+      #{$value}: 0;
+    }
+  }
+}
+
+// ==========================================================
+// POSITIONING
+// ==========================================================
+
+@each $key in (relative, absolute, fixed, sticky) {
+  .is-#{$key} {
+    position: $key;
+  }
+}
+
+// ==========================================================
+// COVERING and OVERLAYING
+// ==========================================================
+
+.is-cover {
+  @extend %is-all-edges;
+}
+
+.is-overlay {
+  @extend %is-all-edges;
+  @extend %position-absolute;
+}
+
+.is-overlay--fixed {
+  @extend %is-all-edges;
+  @extend %position-fixed;
+}
+
+// ==========================================================
+// Layout
+// ==========================================================
+
+.is-layout-width {
+  @extend %is-full-width;
+}
+
+.is-layout-height {
+  @extend %is-full-height;
+}
+
+.is-layout {
+  @extend %is-full-layout;
+}
+
+// ==========================================================
+// Viewport
+// ==========================================================
+
+.is-viewport-width {
+  @extend %is-viewport-width;
+}
+
+.is-viewport-height {
+  @extend %is-viewport-height;
+}
+
+.is-viewport {
+  @extend %is-viewport-layout;
+}

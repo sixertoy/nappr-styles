@@ -1,0 +1,133 @@
+[href] {
+  -webkit-tap-highlight-color: transparent;
+
+  color: var(--nappr-theme-text-primary);
+  font-size: 1rem;
+  text-decoration: none;
+
+  &:link,
+  &:visited,
+  &:active {
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// font-weight: 700;
+// height: 100%;
+// justify-content: space-between;
+// line-height: 1.5rem;
+// margin: 0;
+// padding: 0.75rem 1rem;
+// width: 100%;
+// text-align: left;
+
+/*
+[href] {
+  background-image: var(--underline-img), var(--underline-img);
+  background-position:
+    var(--underline-x) 100%,
+    var(--underline-x) calc(100% - var(--underline-thickness));
+  background-repeat: no-repeat, no-repeat;
+  background-size:
+    var(--underline-hover-width) calc(var(--underline-thickness) * 2),
+    var(--underline-idle-width) var(--underline-thickness);
+  transition: background-size 0s;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a[href]:active,
+  button:not(:disabled):active,
+  input[type='button']:not(:disabled):active,
+  input[type='image']:not(:disabled):active,
+  input[type='reset']:not(:disabled):active,
+  input[type='submit']:not(:disabled):active {
+    background-color: var(--active-tint);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a[href]:hover,
+  button:not(:disabled):hover,
+  input[type='button']:not(:disabled):hover,
+  input[type='image']:not(:disabled):hover,
+  input[type='reset']:not(:disabled):hover,
+  input[type='submit']:not(:disabled):hover {
+    background-color: var(--hover-tint);
+  }
+}
+
+[tabindex]:focus-visible,
+a:focus-visible,
+audio:focus-visible[controls],
+button:focus-visible,
+details:focus-visible,
+details > summary:first-of-type:focus-visible,
+input:focus-visible,
+input[type='button']:focus-visible,
+input[type='checkbox']:focus-visible + label:before,
+input[type='image']:focus-visible,
+input[type='radio']:focus-visible + label:before,
+input[type='reset']:focus-visible,
+input[type='submit']:focus-visible,
+select:focus-visible,
+video:focus-visible[controls] {
+  outline-style: solid;
+}
+
+[tabindex]:focus:not(:focus-visible),
+a:focus:not(:focus-visible),
+audio:focus:not(:focus-visible)[controls],
+button:focus:not(:focus-visible),
+details:focus:not(:focus-visible),
+details > summary:first-of-type:focus:not(:focus-visible),
+input:focus:not(:focus-visible),
+input[type='button']:focus:not(:focus-visible),
+input[type='checkbox']:focus:not(:focus-visible) + label:before,
+input[type='image']:focus:not(:focus-visible),
+input[type='radio']:focus:not(:focus-visible) + label:before,
+input[type='reset']:focus:not(:focus-visible),
+input[type='submit']:focus:not(:focus-visible),
+select:focus:not(:focus-visible),
+video:focus:not(:focus-visible)[controls] {
+  outline-style: none;
+}
+[tabindex]:focus,
+a:focus,
+audio:focus[controls],
+button:focus,
+details:focus,
+details > summary:first-of-type:focus,
+input:focus,
+input[type='button']:focus,
+input[type='checkbox']:focus + label:before,
+input[type='image']:focus,
+input[type='radio']:focus + label:before,
+input[type='reset']:focus,
+input[type='submit']:focus,
+select:focus,
+video:focus[controls] {
+  outline-color: #0a76f6;
+  outline-offset: 2px;
+  outline-style: solid;
+  outline-width: 2px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  a[href]:active,
+  a[href]:hover {
+    --underline-hover-width: var(--underline-max-width);
+  }
+}
+
+a:not(.is-underline),
+a:link:not(.is-underline),
+a:visited:not(.is-underline),
+a:hover:not(.is-underline),
+a:active:not(.is-underline) {
+  text-decoration: none;
+}
+*/

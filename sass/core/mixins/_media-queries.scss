@@ -1,0 +1,22 @@
+@use '../funcs/map' as map;
+@use '../../configs/' as configs;
+
+@mixin media-query($key, $condition) {
+  $value: map.get(configs.$NAPPR_BREAKPOINTS, $key);
+
+  @media (#{$condition}-width: #{$value}) {
+    @content;
+  }
+}
+
+@mixin media-query-min($breakpoint-key) {
+  @include media-query($breakpoint-key, 'min') {
+    @content;
+  }
+}
+
+@mixin media-query-max($breakpoint-key) {
+  @include media-query($breakpoint-key, 'max') {
+    @content;
+  }
+}
