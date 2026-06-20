@@ -2,8 +2,6 @@
 // Utility Classes
 // ==========================================================
 .clearfix {
-  *zoom: 1;
-
   &::after,
   &::before {
     content: '.';
