@@ -63,6 +63,7 @@
     "lint:fix": "./.scripts/lint.sh --fix",
     "format": "./.scripts/format.sh",
     "format:check": "./.scripts/format.sh --check",
+    "prepare": "yarn build",
     "prepublishOnly": "yarn validate && yarn build",
     "validate": "yarn lint && yarn format:check"
   }
